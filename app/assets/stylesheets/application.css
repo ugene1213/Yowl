@@ -1,0 +1,554 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+div{
+  display: block;
+}
+body {
+  background: #f5f5f5;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.16666;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+.header {
+  background:#d32323;
+  color: #fff;
+  padding: 20px;
+}
+
+ /*this will be changed with an actual logo later */
+.logo{
+  color: black;
+  display: block;
+  font-size: 32px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-shadow:
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+  float: left;
+}
+
+.login-signup {
+  float: right;
+
+}
+
+.login-list > li{
+  text-align: center;
+}
+
+.header-group {
+  font-size: 14px;
+}
+
+
+.header-user-info {
+  display: block;
+  float: right;
+}
+
+.user-image {
+  display: block;
+  float: left;
+}
+
+.button-stuff {
+  float: right;
+  display: block;
+}
+
+.header-name {
+  font-weight: bold;
+  /*float: right;*/
+}
+
+.header-button {
+  /*float: right;*/
+}
+
+.header-button:hover, .business-link:hover{
+  text-decoration: underline;
+}
+
+
+li {
+  list-style: none;
+}
+
+a, button, input[type="submit"] {
+  cursor: pointer;
+}
+
+.login-signup > ul > li > a { /*change this up later*/
+  display: block;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.sign-up {
+  border: 1px solid #000;
+  font-weight: bold;
+  border-radius: 8%;
+}
+
+.sign-up:hover{
+  background-color: #ed0008;
+}
+
+.login:hover {
+  background: #9b0e00;
+}
+
+.login {
+  padding: 0;
+}
+
+/*This is the section for the signup and login form*/
+.mega-container {
+  min-height: 1020px;
+  background: #fff;
+  color: #000;
+
+}
+
+.header-logo {
+  display: block;
+  background: #d32323;
+  float: none;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.login-form-container{
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 900px;
+  padding: 10px;
+  min-height: 900px;
+}
+
+.login-form {
+  display: block;
+  float: left;
+  margin: 10px;
+
+}
+
+/*This 'input' is for the username and passwords fields*/
+.login-form input {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 300px;
+  border: 10%;
+}
+
+.login-form > input[type="submit"] {
+    color: #fff;
+    background: #d90007;
+    text-align: center;
+    display: block;
+}
+
+.form-header {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  display: block;
+  width: 100%;
+  margin-top: 100px;
+  padding-left: 85px;
+  margin-bottom: 24px
+}
+
+.login-signup-redirect, .generic-user {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+.generic-user {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.login-signup-redirect > a, .generic-user {
+  color: #0073bb;
+}
+
+.login-signup-redirect > a:hover, .generic-user:hover {
+  text-decoration: underline;
+}
+
+
+.signup-logo-container{
+  display: block;
+  height: 300px;
+}
+.signup-logo {
+  display: block;
+  width: auto;
+  height: 100%;
+  float: right;
+}
+
+/* This section is for the business index stuff */
+.business-photo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  border: 1px solid #000;
+  margin-right: 12px;
+}
+
+
+
+.business-index {
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+  border: 0.5px solid #ccc;
+  padding: 0px 10px;
+}
+
+.business-index-header {
+  color: #d32323; /* This color is red*/
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.business-item {
+  border-bottom: 1px solid #e6e6e6; /*This is a type of gray*/
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+
+.business-item:first-child {
+  padding-top: 0px;
+  padding-bottom: 11px;
+}
+
+.business-photo {
+  float: left;
+}
+
+.business-item-info {
+  float: left;
+}
+
+.business-link {
+  color: #0073bb;
+}
+
+.business-show-header {
+  padding: 0 20px;
+}
+
+
+.business-show-header{
+  margin: 0 auto;
+  display: block;
+}
+
+.business-name-rating-pic {
+  display: block;
+  float: left;
+}
+
+.business-show-name {
+  font-size: 30px;
+  line-height: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.business-show-counter{
+  display: block;
+}
+
+
+.business-show-rating {
+  float: left;
+  display: block;
+}
+
+.business-show-num-reviews {
+  color: #666;
+  display: block;
+  float: left;
+}
+
+.business-show-review-button{
+  text-align: center;
+  display: block;
+  float: right;
+  border: 1px solid #8d0005;
+  width: 159px;
+  color: white;
+  background-color: #d90007; /*this is a type of red*/
+  height: 36px;
+  border-radius: 8%;
+
+}
+
+.review-button{
+  padding: 8px;
+  font-weight: bold;
+}
+
+.business-show-pic{
+  display: block;
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+}
+
+.business-show-reviews{
+  margin: 0 auto;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 20px 30px;
+  background: white;
+  min-height: 700px;
+}
+
+.reviews-header {
+  font-weight: bold;
+  color: #d32323;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reviews-header > b {
+  font-weight: none;
+  color: black;
+}
+
+.reviews-list:last-child {
+  border-bottom: 1px solid lightgray;
+}
+
+.review-content {
+  display: block;
+  margin-bottom: 20px;
+  border-top: 1px solid lightgray;
+  padding: 17px 0 16px 0;
+}
+
+.review-user-info {
+  display: block;
+  float: left;
+  padding: 0 15px;
+}
+
+.reviewer-pic {
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+  float: left;
+  border: 1px solid black; /*TODO: this is temporary and will be removed when I upload an actual picture*/
+  margin-right: 5px;
+}
+
+.review-author {
+  display: block;
+  float: left;
+  font-size: 14px;
+  line-height: 1.28571em;
+  color: #0073bb;
+  font-weight: bold;
+}
+
+.review-main {
+  float: left;
+  display: block;
+  width: 600px;
+  padding: 0 15px;
+}
+
+.review-rating {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+.review-date {
+  display: block;
+  float: left;
+}
+
+.review-body{
+  margin-top: 5px;
+}
+
+.review-page {
+  background: white;
+}
+
+.review-page h1 {
+  color: #d32323;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.review-page-review-section {
+  width: 700px;
+  display: block;
+  float: left;
+  padding: 20px 20px 20px;
+  padding-left: 169px;
+}
+
+.review-business-info {
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+
+.review-header-logo {
+  border-radius: 4px;
+  border: 1px solid black;
+  display:block;
+  height: 58px;
+  width: 58px;
+  float: left;
+}
+
+.review-business-info-specifics {
+  display: block;
+  float: left;
+  margin-left: 5px;
+}
+
+.review-business-name {
+  display: block;
+  float: left;
+  font-size: 14px;
+  line-height: 1.28571em;
+  color: #0073bb;
+  font-weight: bold;
+}
+
+.review-business-name:hover {
+  text-decoration: underline;
+}
+
+.review-business-address {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.review-form-header {
+  font-weight: bold;
+}
+
+.review-page-old-reviews {
+  float: right;
+  display: block;
+  width: 400px;
+  padding: 20px;
+  border-left: 1px solid lightgray;
+}
+
+.review-form-actual {
+  border: 1px solid darkgray;
+  border-radius: 4px;
+  padding: 18px 15px 0 15px;
+  margin-bottom: 20px;
+}
+
+.review-rating-number {
+  width: 20px;
+}
+
+.comment-body{
+  width: 660px;
+  border-top: 1px solid lightgray;
+  margin-top: 10px;
+  padding-top: 12px;
+}
+
+.review-form-submit {
+  background: linear-gradient(#ed0008, #dd1600);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  width: 116px;
+  text-align: center;
+  border-radius: 4px;
+  height: 20px;
+  border: 1px solid #b76d6d;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.review-cancel {
+  color: #0073bb;
+  font-size: 12px;
+
+}
+
+.review-cancel:hover {
+  text-decoration: underline;
+}
+
+.user-image {
+  border: 1px solid black;
+}
+
+.map-container {
+  width: 500px;
+  height: 500px;
+  border: 1px solid blue;
+  margin: 10px auto;
+}

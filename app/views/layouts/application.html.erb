@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FullStackProject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+    window.yowlAssets = {
+      loginImage: "<%= image_url("signup_illustration.png") %>",
+      genericImage: "<%= image_url("generic_image.png") %>",
+      genericUser: "<%= image_url("generic_user.png") %>"
+
+    }
+
+  </script>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDj4BH7FgACnMESrJT_ctTxoTF9Q2VD__0" %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
