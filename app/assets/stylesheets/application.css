@@ -322,6 +322,9 @@ a, button, input[type="submit"] {
   color: #666;
   display: block;
   float: left;
+  width: 100px;
+  height: 20px;
+  padding-top: 7px;
 }
 
 .business-show-review-button{
@@ -444,8 +447,8 @@ a, button, input[type="submit"] {
   width: 700px;
   display: block;
   float: left;
-  padding: 20px 20px 20px;
-  padding-left: 169px;
+  padding: 20px 20px 20px 0;
+  padding-left: 20px;
 }
 
 .review-business-info {
@@ -471,7 +474,6 @@ a, button, input[type="submit"] {
 
 .review-business-name {
   display: block;
-  float: left;
   font-size: 14px;
   line-height: 1.28571em;
   color: #0073bb;
@@ -496,8 +498,9 @@ a, button, input[type="submit"] {
   float: right;
   display: block;
   width: 400px;
-  padding: 20px;
+  padding: 7px;
   border-left: 1px solid lightgray;
+  min-height: 500px;
 }
 
 .review-form-actual {
@@ -551,4 +554,29 @@ a, button, input[type="submit"] {
   height: 500px;
   border: 1px solid blue;
   margin: 10px auto;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(../assets/stars.png);
+    vertical-align: bottom;
+}
+
+input[type="radio"]:checked {
+  background-position: 30px 30px;
+}
+
+.review-rating {
+  float:left;
+  display:block;
+  width: 126px;
+  height: 32px;
+}
+
+.yay {
+  display: block;
+  height: 32px;
+  width: 126px;
 }

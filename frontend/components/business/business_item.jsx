@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const BusinessItem =  ({ business: { name, description, picture, id }, counter }) => {
+const BusinessItem =  ({ business: { name, description, picture, id}, counter }) => {
 
   const link = `/businesses/${id}`;
 
@@ -9,7 +9,7 @@ const BusinessItem =  ({ business: { name, description, picture, id }, counter }
   <li className="business-item group">
 
     <img
-      src={ window.yowlAssets.genericImage}
+      src={ window.yowlAssets[picture]}
       className="business-photo"
       />
     <div className="business-item-info">

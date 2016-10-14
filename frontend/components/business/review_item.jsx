@@ -1,9 +1,28 @@
 import React from 'react';
 import ReviewShow from './review_show';
 
-
 const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
 
+  const num = (review) => {
+    const thing = parseInt(review);
+
+    if (thing === 1) {
+      return "one";
+    }
+    else if (thing === 2) {
+      return "two";
+    }
+    else if (thing === 3) {
+      return "three";
+    }
+    else if(thing === 4) {
+      return "four";
+    } else {
+      return "five";
+    }
+
+  };
+  
   return (
     <li className="review-content group">
 
@@ -14,7 +33,7 @@ const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
 
       <div className="review-main">
         <div className="review-rating-date group">
-          <div className="review-rating"> {rating} </div>
+          <div className={"review-rating"} ><img src={window.yowlAssets[num(rating)]} className="yay" /></div>
           <div className="review-date">{created_at.slice(0,10)}</div>
         </div>
 

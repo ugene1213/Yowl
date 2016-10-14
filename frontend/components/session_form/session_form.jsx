@@ -38,16 +38,15 @@ export default class SessionForm extends React.Component {
 		this.props.processForm({user});
 	}
 
+
   genericUser() {
     this.setState({
       username: "generic",
       password: "genericpassword"
     });
+    
     const user = this.state;
-		this.props.processForm({user});
-  }
-
-  genericButton() {
+    this.props.processForm({user});
   }
 
 	navLink() {

@@ -30,7 +30,7 @@ class ReviewForm extends React.Component {
     update(property) {
 
       return e => {
-  
+
         this.setState({
           [property]: e.currentTarget.value
         });
@@ -42,7 +42,6 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-
       return (
 
         <div className="review-page group">
@@ -52,7 +51,7 @@ class ReviewForm extends React.Component {
               <h1 className="review-header-word">Write a Review</h1>
 
               <div className="review-business-info group">
-                <img src={window.yowlAssets.genericImage} className="review-header-logo" />
+                <img src={window.yowlAssets[this.props.business.picture]} className="review-header-logo" />
                 <div className="review-business-info-specifics">
                   <Link to= {"/businesses/" + this.props.params.id} >
                     <div className="review-business-name">{this.props.business.name}</div>
@@ -68,10 +67,33 @@ class ReviewForm extends React.Component {
 
                 <form onSubmit={this.handleSubmit} >
                   <div className="review-form-actual">
-                    <input type="number"
-                      className="review-rating-number"
-                      value={this.state.rating}
+
+                    1<input type="radio"
+                      className="review-rating-number 1"
+                      name="rating"
+                      value="1"
                       onChange={this.update("rating")}/>
+                    2<input type="radio"
+                      className="review-rating-number 2"
+                      name="rating"
+                      value="2"
+                      onChange={this.update("rating")}/>
+                    3<input type="radio"
+                      className="review-rating-number 3"
+                      name="rating"
+                      value="3"
+                      onChange={this.update("rating")}/>
+                    4<input type="radio"
+                      className="review-rating-number 4"
+                      name="rating"
+                      value="4"
+                      onChange={this.update("rating")}/>
+                    5<input type="radio"
+                      className="review-rating-number 5"
+                      name="rating"
+                      value="5"
+                      onChange={this.update("rating")}/>
+
                     <label>Select Your Rating</label>
                     <br/>
 
