@@ -11,7 +11,7 @@ Business.delete_all
 User.delete_all
 Review.delete_all
 
-Business.create!(
+wah_fung = Business.create!(
   name: "Wah Fung",
   description: "This place has the best char siu",
   lat: "40.7173",
@@ -37,8 +37,58 @@ Business.create!(
   address: "630 10th Ave, New York, NY 10036",
   picture: "lali"
 )
+Business.create!(
+  name: "Mcdonald's",
+  description:"Just another Mcdonald's",
+  lat: "40.738373",
+  lng: "-73.883042",
+  address: "80-03 Queens Blvd, New York, NY 11373",
+  picture: "mcdonalds"
+)
 
-User.create!(
-  username: "generic",
-  password: "genericpassword"
+Business.create!(
+  name: "White Bear",
+  description: "This place has bomb wontons",
+  lat: "40.758859",
+  lng: "-73.831681",
+  address: "135-02 Roosevelt Ave, Flushing, NY 11354",
+  picture: "whiteBear"
+)
+
+Business.create!(
+  name: "Shake Shack",
+  description: "blah blah blah just another restaurant",
+  lat: "40.743747",
+  lng: "-73.610637",
+  address: " 860 Old Country Rd, Garden City, NY 11530",
+  picture: "shakeShack"
+)
+
+generic = User.create!(username: "generic",password: "genericpassword")
+
+jerry = User.create!(username: "jerry",password: "genericpassword")
+
+
+wilson = User.create!(username: "wilson",password: "genericpassword")
+
+
+Review.create!(
+rating: 1,
+body: "This place is ok",
+business: wah_fung,
+user: generic
+)
+
+Review.create!(
+rating: 1,
+body: "this place is bad",
+business: wah_fung,
+user: jerry
+)
+
+Review.create!(
+  rating: 1,
+  body: "This place is terrible",
+  business: wah_fung,
+  user: wilson
 )

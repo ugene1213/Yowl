@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <ul className="login-list">
-      <li>
-        <Link to="/signup" activeClassName="current" className="sign-up">Sign up!</Link>
-      </li>
-      <li>
-        <Link to="/login" activeClassName="current" className="login">Login</Link>
-      </li>
-    </ul>
+const sessionLinks = () => {
 
-  </nav>
-);
+  return (
+    <nav className="login-signup">
+      <ul className="login-list">
+        <li>
+          <Link to="/signup" activeClassName="current" className="sign-up">Sign up!</Link>
+        </li>
+        <li>
+          <Link to="/login" activeClassName="current" className="login">Login</Link>
+        </li>
+      </ul>
+
+    </nav>
+  );
+};
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group group">
