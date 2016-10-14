@@ -25,8 +25,11 @@ export default class BusinessShow extends React.Component {
     }
     else if(thing === 4) {
       return "four";
-    } else {
+    }
+    else if (thing === 5) {
       return "five";
+    } else {
+      return "zero";
     }
 
   }

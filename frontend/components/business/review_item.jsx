@@ -17,12 +17,15 @@ const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
     }
     else if(thing === 4) {
       return "four";
-    } else {
+    }
+    else if(thing === 5) {
       return "five";
+    } else {
+      return "zero";
     }
 
   };
-  
+
   return (
     <li className="review-content group">
 
