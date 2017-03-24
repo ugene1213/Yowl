@@ -1,4 +1,4 @@
-#Yowl
+# Yowl
 
 [Heroku link][heroku]
 
@@ -16,7 +16,7 @@ criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS
 - [ ] Google maps displaying where certain restaurants are in
 - [ ] Rich Text Editing
 
-##Design Docs
+## Design Docs
 * [View Wireframes][wireframes]
 * [React Components][components]
 * [API endpoints][api-endpoints]
