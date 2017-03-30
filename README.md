@@ -4,7 +4,7 @@
 
 [heroku]: https://yowler.herokuapp.com/
 
-##Minimum Viable Product
+## Minimum Viable Product
 
 Yowl is a web application that is based on Yelp and built with Ruby on Rails and React/Redux. By the end of week 9, this app will be at the very least satisfy the following
 criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
