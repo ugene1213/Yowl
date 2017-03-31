@@ -40,13 +40,7 @@ export default class SessionForm extends React.Component {
 
 
   genericUser() {
-    this.setState({
-      username: "generic",
-      password: "genericpassword"
-    });
-    
-    const user = this.state;
-    this.props.processForm({user});
+    this.props.processForm({user: {username:"generic",password:"genericpassword"}});
   }
 
 	navLink() {
@@ -67,7 +61,7 @@ export default class SessionForm extends React.Component {
           <br/>
             <div className="login-signup-redirect">New To Yowl? { this.navLink() }</div>
             <button className="generic-user"
-            type="submit" onClick= {this.genericUser}>Guest Login</button>
+            type="submit" onClick={this.genericUser}>Guest Login</button>
         </div>
       );
     } else {
@@ -120,7 +114,7 @@ export default class SessionForm extends React.Component {
               </label>
 
               <br/>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" id="hello" />
               <br/>
 
             </div>
