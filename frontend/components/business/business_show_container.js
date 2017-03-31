@@ -16,7 +16,7 @@ const mapStateToProps = (state , ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
 
-    requestBusiness: (id) => dispatch(requestBusiness(id))
+    requestBusiness: (id) => dispatch(requestBusiness(id));
 
 });
 
