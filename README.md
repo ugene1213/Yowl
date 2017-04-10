@@ -8,7 +8,15 @@ Yowl is a web application that is based on Yelp and built with Ruby on Rails on 
 
 ![signup](app/assets/images/signup.png)
 
-## Features To Add Soon
+# Features So Far
+
+## User Log In/Sign Up
+
+Users can create a an account and log in with account
+
+![login](app/assets/images/login.png)
+
+# Features To Add Soon
 - [ ] User Profile Page
 - [ ] Mark reviews as interesting, funny, cool, etc.
 - [ ] businesses page for business owners
