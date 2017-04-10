@@ -1,8 +1,8 @@
 # Yowl
 
-[Heroku link][heroku]
+[Live link][heroku]
 
-[heroku]: https://yowler.herokuapp.com/
+[heroku]: http://yowl.eugene.club
 
 ## Minimum Viable Product
 
