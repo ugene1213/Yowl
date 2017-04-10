@@ -4,12 +4,11 @@
 
 [heroku]: http://yowl.eugenecheng.club
 
-Yowl is a web application that is based on Yelp and built with Ruby on Rails and React/Redux. By the end of week 9, this app will be at the very least satisfy the following
-criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+Yowl is a web application that is based on Yelp and built with Ruby on Rails on the back-end, with a PostgresQL database, and React/Redux on the front-end. Right Now, users can make an account and review a select number of restaurants, with a google map mapping their locations.
 
+![signup](app/assets/images/signup.png)
 
-
-## Features To Add
+## Features To Add Soon
 - [ ] User Profile Page
 - [ ] Mark reviews as interesting, funny, cool, etc.
 - [ ] businesses page for business owners
