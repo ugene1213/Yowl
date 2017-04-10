@@ -29,7 +29,6 @@ export const logout = (success) => {
     url: '/api/session',
     success,
     error: () => {
-        console.log("There was a logout error");
     }
 
   });

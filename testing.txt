@@ -1,2 +1,0 @@
-this is just a test file to see if my git commands are working as intended
-

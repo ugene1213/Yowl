@@ -14,15 +14,12 @@ const BusinessesMiddleware = ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case REQUEST_BUSINESSES:
-      console.log("getting the businesses");
       fetchBusinesses(success1);
       return next(action);
     case REQUEST_BUSINESS:
-      console.log("getting business");
       fetchBusiness(action.id, success2);
       return next(action);
     case CREATE_REVIEW:
-      console.log("creating the review");
       createReview(success2, action.review);
       break;
     default:

@@ -13,7 +13,6 @@ export default class MarkerManager {
 
   updateMarkers(businesses) {
     this.businesses = businesses;
-    console.log('time to update');
     this._businessesToAdd().forEach(this._createMarkerFromBusiness);
   }
 
