@@ -2,7 +2,7 @@
 
 [Live link][heroku]
 
-[heroku]: http://yowl.eugene.club
+[heroku]: http://yowl.eugenecheng.club
 
 ## Minimum Viable Product
 
