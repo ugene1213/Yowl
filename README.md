@@ -23,6 +23,16 @@ When logged in, users can write reviews for restaurants in the database. Current
 ![reviews](app/assets/images/reviews.png)
 
 ## Features To Add Soon
-- [ ] User Profile Page
-- [ ] Mark reviews as interesting, funny, cool, etc.
-- [ ] businesses page for business owners
+
+### User Profile Page
+
+I want to add a User profile page where users can keep track of all their reviewws and customize their information and profile picture
+
+### Marking reviews
+
+I want users to be able to mark reviews as interesting, funny, cool, etc.. I would implement this feature using the MVC pattern and have each marking be represented by an object.
+
+
+### Improve Business Show pages
+
+Instead of just saving all it's reviews, business show pages should also hold other information about the business, such as price, hours of operation, and additional pictures.
