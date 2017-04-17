@@ -10,8 +10,8 @@
     "node": "5.1.0",
     "npm": "3.3.12"
   },
-  "prod": "NODE_ENV=production webpack --progress --colors --config webpack.config.js",
   "scripts": {
+    "prod": "NODE_ENV=production webpack --progress --colors --config webpack.config.js",
     "webpack": "./node_modules/.bin/webpack --watch",
     "postinstall": "./node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
