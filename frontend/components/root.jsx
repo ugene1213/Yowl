@@ -25,17 +25,19 @@ const Root = ({ store }) => {
   };
 
   return (
-  <Provider store={ store }>
-    <Router history={hashHistory}>
-      <Route path='/' component={App}>
-        <IndexRoute component={ SearchContainer } />
-        <Route path='/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path='/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path='/businesses/:id' component= { BusinessShowContainer } />
-        <Route path='/businesses/:id/review' component={ ReviewFormContainer } onEnter={_ensureLoggedIn} />
-      </Route>
-    </Router>
-  </Provider>
+    <div>
+      <Provider store={ store }>
+        <Router history={hashHistory}>
+          <Route path='/' component={App}>
+            <IndexRoute component={ SearchContainer } />
+            <Route path='/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+            <Route path='/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+            <Route path='/businesses/:id' component= { BusinessShowContainer } />
+            <Route path='/businesses/:id/review' component={ ReviewFormContainer } onEnter={_ensureLoggedIn} />
+          </Route>
+        </Router>
+      </Provider>
+    </div>
   );
 };
 

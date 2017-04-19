@@ -3,9 +3,10 @@ import BusinessIndex from './business_index';
 import { requestBusinesses, requestBusiness } from '../../actions/business_actions';
 
 
-const mapStateToProps = ( { businesses } ) => ({
+const mapStateToProps = ( { businesses } ) => {
+  return {
   businesses
-});
+}};
 
 const mapDispatchToProps = (dispatch) => ({
 

@@ -3,14 +3,16 @@ import BusinessShow from './business_show';
 import { requestBusiness } from '../../actions/business_actions';
 
 
-const mapStateToProps = (state , ownProps) => {
-  const businessId =  parseInt(ownProps.params.id);
-  const business = state.businesses[businessId];
+const mapStateToProps = ({ businesses } , ownProps) => {
 
-  return {
-    businessId,
-    business
-  };
+    const businessId = ownProps.params.id;
+    const business = business;
+
+    return {
+        business,
+        businessId
+    };
+
 };
 
 

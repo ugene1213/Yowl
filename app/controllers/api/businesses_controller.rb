@@ -17,8 +17,14 @@ class Api::BusinessesController < ApplicationController
   end
 
   def show
-    puts params[:id]
+    byebug
     @business = Business.find(params[:id])
+
+    if @business
+      render json: @business
+    else
+      render json: @business.errors.full_messages, status: 422
+    end
   end
 
   private

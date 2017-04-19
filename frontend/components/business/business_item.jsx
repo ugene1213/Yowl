@@ -1,29 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { hashHistory } from 'react-router';
 
-const BusinessItem =  ({ business: { name, description, picture, id}, counter }) => {
 
-  const link = `/businesses/${id}`;
+class BusinessItem extends React.Component {
 
-  return (
-  <li className="business-item group">
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    <img
-      src={ window.yowlAssets[picture]}
-      className="business-photo"
-      />
-    <div className="business-item-info">
-      <h4>
-        { counter }.<Link to={ link } className="business-link">{ name }</Link>
-      </h4>
+  handleClick() {
+    hashHistory.push( "/businesses/" + this.props.business.id)
+  }
 
-      <p className="business-description">
-        { description }
-      </p>
-    </div>
-  </li>
-  );
-};
+  render() {
+
+    const { business, counter } = this.props;
+    return (
+      <li className="business-item group">
+
+        <img
+          src={ window.yowlAssets[business.picture]}
+          className="business-photo"
+          />
+        <div className="business-item-info">
+          <h4>
+            { counter }.<button onClick={ this.handleClick } className="business-link">{ business.name }</button>
+        </h4>
+
+        <p className="business-description">
+          { business.description }
+        </p>
+      </div>
+    </li>
+    );
+  }
+}
 
 
 export default BusinessItem;
