@@ -16,116 +16,119 @@ class ReviewForm extends React.Component {
 
     handleSubmit(event) {
       event.preventDefault();
-      const businessId = parseInt(this.props.params.id);
+      const businessId = parseInt(this.props.id);
       const review = Object.assign({}, { business_id: businessId }, this.state);
       this.props.createReview({ review });
       this.navigateToBusinessShow();
     }
 
     navigateToBusinessShow() {
-      const businessUrl = "/businesses/" + this.props.params.id;
+      const businessUrl = "/businesses/" + this.props.id;
       hashHistory.push(businessUrl);
     }
 
+    // <img src={window.yowlAssets[this.props.business.picture]} className="review-header-logo" />
     update(property) {
-
       return e => {
-
         this.setState({
           [property]: e.currentTarget.value
         });
       };
     }
 
-    componentDidMount() {
-      this.props.requestBusinesses();
-    }
-
     render() {
-      return (
+      debugger
 
-        <div className="review-page group">
-          <div className="review-page-review-section">
+      if (typeof this.props.business === "undefined") {
+        return (
+          <div>Getting the form....</div>
+        )
+      } else {
+        return (
 
-            <div className="review-page-header">
-              <h1 className="review-header-word">Write a Review</h1>
+          <div className="review-page group">
+            <div className="review-page-review-section">
 
-              <div className="review-business-info group">
-                <img src={window.yowlAssets[this.props.business.picture]} className="review-header-logo" />
-                <div className="review-business-info-specifics">
-                  <Link to= {"/businesses/" + this.props.params.id} >
-                    <div className="review-business-name">{this.props.business.name}</div>
-                  </Link>
-                  <div className="review-business-address">{this.props.business.address}</div>
+              <div className="review-page-header">
+                <h1 className="review-header-word">Write a Review</h1>
+
+                <div className="review-business-info group">
+                  <div className="review-business-info-specifics">
+                    <Link to= {"/businesses/" + this.props.id} >
+                      <div className="review-business-name">{this.props.business.name}</div>
+                    </Link>
+                    <div className="review-business-address">{this.props.business.address}</div>
+                  </div>
                 </div>
+              </div>
+
+              <div className="review-form">
+                <h2 className="review-form-header">Your Review</h2>
+
+
+                  <form onSubmit={this.handleSubmit} >
+                    <div className="review-form-actual">
+
+                      1<input type="radio"
+                        className="review-rating-number 1"
+                        name="rating"
+                        value="1"
+                        onChange={this.update("rating")}/>
+                      2<input type="radio"
+                        className="review-rating-number 2"
+                        name="rating"
+                        value="2"
+                        onChange={this.update("rating")}/>
+                      3<input type="radio"
+                        className="review-rating-number 3"
+                        name="rating"
+                        value="3"
+                        onChange={this.update("rating")}/>
+                      4<input type="radio"
+                        className="review-rating-number 4"
+                        name="rating"
+                        value="4"
+                        onChange={this.update("rating")}/>
+                      5<input type="radio"
+                        className="review-rating-number 5"
+                        name="rating"
+                        value="5"
+                        onChange={this.update("rating")}/>
+
+                      <label>Select Your Rating</label>
+                      <br/>
+
+                      <textarea
+                        className="comment-body"
+                        cols='30'
+                        rows='10'
+                        value={this.state.body}
+                        onChange={this.update("body")}
+                        placeholder= "Your review helps others learn about great local businesses.Please don't review this
+                        business if you received a freebie for writing this review, or if you're connected in any way to the
+                        owner or employees."
+                        ></textarea>
+                      <br/>
+                  </div>
+                    <input type="submit" className="review-form-submit" value="Post"/>
+                  </form>
+                <button onClick={this.navigateToBusinessShow} className="review-cancel">Cancel</button>
               </div>
             </div>
 
-            <div className="review-form">
-              <h2 className="review-form-header">Your Review</h2>
+            <div className="review-page-old-reviews">
+              <h1>Reviews for { this.props.business.name }</h1>
 
+              <div className="review-page-list-of-reviews">
+                <ReviewShow business= {this.props.business } num={ 5 } />
+              </div>
 
-                <form onSubmit={this.handleSubmit} >
-                  <div className="review-form-actual">
-
-                    1<input type="radio"
-                      className="review-rating-number 1"
-                      name="rating"
-                      value="1"
-                      onChange={this.update("rating")}/>
-                    2<input type="radio"
-                      className="review-rating-number 2"
-                      name="rating"
-                      value="2"
-                      onChange={this.update("rating")}/>
-                    3<input type="radio"
-                      className="review-rating-number 3"
-                      name="rating"
-                      value="3"
-                      onChange={this.update("rating")}/>
-                    4<input type="radio"
-                      className="review-rating-number 4"
-                      name="rating"
-                      value="4"
-                      onChange={this.update("rating")}/>
-                    5<input type="radio"
-                      className="review-rating-number 5"
-                      name="rating"
-                      value="5"
-                      onChange={this.update("rating")}/>
-
-                    <label>Select Your Rating</label>
-                    <br/>
-
-                    <textarea
-                      className="comment-body"
-                      cols='30'
-                      rows='10'
-                      value={this.state.body}
-                      onChange={this.update("body")}
-                      placeholder= "Your review helps others learn about great local businesses.Please don't review this
-                      business if you received a freebie for writing this review, or if you're connected in any way to the
-                      owner or employees."
-                      ></textarea>
-                    <br/>
-                </div>
-                  <input type="submit" className="review-form-submit" value="Post"/>
-                </form>
-              <button onClick={this.navigateToBusinessShow} className="review-cancel">Cancel</button>
             </div>
           </div>
 
-          <div className="review-page-old-reviews">
-            <h1>Reviews for { this.props.business.name }</h1>
+        );
+      }
 
-            <div className="review-page-list-of-reviews">
-              <ReviewShow business= {this.props.business } num={ 5 } />
-            </div>
-
-          </div>
-        </div>
-
-      );
     }
 
 }

@@ -6,10 +6,11 @@ import SessionFormContainer from './session_form/session_form_container';
 import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';
 import SearchContainer from './business/map/search_container';
-import ReviewFormContainer from './business/review_form_container.js';
+import ReviewFormContainer from './business/review_form_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
+    debugger
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
@@ -17,6 +18,7 @@ const Root = ({ store }) => {
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
+    debugger
 
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
@@ -25,7 +27,6 @@ const Root = ({ store }) => {
   };
 
   return (
-    <div>
       <Provider store={ store }>
         <Router history={hashHistory}>
           <Route path='/' component={App}>
@@ -37,7 +38,6 @@ const Root = ({ store }) => {
           </Route>
         </Router>
       </Provider>
-    </div>
   );
 };
 

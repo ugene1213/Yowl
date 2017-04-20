@@ -6,10 +6,9 @@ import { requestBusiness } from '../../actions/business_actions';
 const mapStateToProps = ({ businesses } , ownProps) => {
 
     const businessId = ownProps.params.id;
-    const business = business;
 
     return {
-        business,
+        businesses,
         businessId
     };
 

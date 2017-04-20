@@ -22,7 +22,7 @@ export const logout = () => ({
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
-  currentUser: currentUser
+  currentUser
 });
 
 export const receiveErrors = (errors) => ({

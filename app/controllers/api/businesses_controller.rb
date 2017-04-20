@@ -17,7 +17,6 @@ class Api::BusinessesController < ApplicationController
   end
 
   def show
-    byebug
     @business = Business.find(params[:id])
 
     if @business

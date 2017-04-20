@@ -39,7 +39,8 @@ export default class SessionForm extends React.Component {
 	}
 
 
-  genericUser() {
+  genericUser(e) {
+    e.preventDefault();
     this.props.processForm({user: {username:"generic",password:"genericpassword"}});
   }
 
@@ -60,8 +61,7 @@ export default class SessionForm extends React.Component {
           Login In to Yowl
           <br/>
             <div className="login-signup-redirect">New To Yowl? { this.navLink() }</div>
-            <button className="generic-user"
-            type="submit" onClick={this.genericUser}>Guest Login</button>
+            <button className="generic-user" onClick={this.genericUser}>Guest Login</button>
         </div>
       );
     } else {
@@ -87,6 +87,10 @@ export default class SessionForm extends React.Component {
 		);
 	}
 
+  // <img
+  //   src={window.yowlAssets.loginImage}
+  //   className="signup-logo"
+  //   />
 
 	render() {
 		return (
@@ -120,10 +124,6 @@ export default class SessionForm extends React.Component {
             </div>
 
             <div className="signup-logo-container">
-              <img
-                src={window.yowlAssets.loginImage}
-                className="signup-logo"
-                />
             </div>
           </form>
         </div>

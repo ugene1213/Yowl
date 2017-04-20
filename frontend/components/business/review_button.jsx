@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { hashHistory } from 'react-router';
 
 class ReviewButton extends React.Component {
 
@@ -9,14 +9,14 @@ class ReviewButton extends React.Component {
   }
 
   _handleSubmit() {
+    debugger
     const businessId = this.props.id;
     const url = `/businesses/${businessId}/review`;
-    this.props.router.push(url);
+    hashHistory.push(url);
   }
 
   render() {
     return (
-
       <button className="review-button" onClick={ this._handleSubmit}>
         Write a Review
       </button>
@@ -26,4 +26,4 @@ class ReviewButton extends React.Component {
 
 }
 
-export default withRouter(ReviewButton);
+export default ReviewButton;

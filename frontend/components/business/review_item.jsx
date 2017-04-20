@@ -25,18 +25,18 @@ const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
     }
 
   };
+  // <img src={ window.yowlAssets["genericUser"] } className="reviewer-pic"/>
+  // <div className={"review-rating"} ><img src={window.yowlAssets[num(rating)]} className="yay" /></div>
 
   return (
     <li className="review-content group">
 
       <div className="review-user-info">
-        <img src={ window.yowlAssets["genericUser"] } className="reviewer-pic"/>
         <div className="review-author">{ user.username }</div>
       </div>
 
       <div className="review-main">
         <div className="review-rating-date group">
-          <div className={"review-rating"} ><img src={window.yowlAssets[num(rating)]} className="yay" /></div>
           <div className="review-date">{created_at.slice(0,10)}</div>
         </div>
 

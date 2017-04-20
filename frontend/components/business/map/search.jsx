@@ -16,9 +16,7 @@ class Search extends React.Component {
   }
 
   render () {
-
     const businesses = toArray(this.props.businesses);
-
 
     return (
       <div className="search-main">

@@ -1,16 +1,15 @@
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
-import { requestBusinesses, createReview } from '../../actions/business_actions';
+import { requestBusiness, createReview } from '../../actions/business_actions';
 
 
-const mapStateToProps = ({ businesses },ownProps) => {
-
-  const business = businesses[parseInt(ownProps.params.id)] || {
-    name: "", address: "", reviews: []
-  };
+const mapStateToProps = (state, ownProps) => {
+  const { id } = ownProps.params;
+  const business = state.businesses[id];
 
   return {
-    business
+    business,
+    id
   };
 };
 
@@ -18,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     createReview: (review) => dispatch(createReview(review)),
-    requestBusinesses: () => dispatch(requestBusinesses())
+    requestBusiness: (id) => dispatch(requestBusiness(id))
   };
 
 };

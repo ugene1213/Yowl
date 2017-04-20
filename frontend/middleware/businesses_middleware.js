@@ -11,7 +11,6 @@ const BusinessesMiddleware = ({ getState, dispatch }) => next => action => {
   const success1 = (businesses) => dispatch(receiveBusinesses(businesses));
   const success2 = (business) => dispatch(receiveBusiness(business));
 
-
   switch(action.type) {
     case REQUEST_BUSINESSES:
       fetchBusinesses(success1);
