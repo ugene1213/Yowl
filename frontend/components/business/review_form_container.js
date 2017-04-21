@@ -3,9 +3,9 @@ import ReviewForm from './review_form';
 import { requestBusiness, createReview } from '../../actions/business_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ({session, businesses}, ownProps) => {
   const { id } = ownProps.params;
-  const business = state.businesses[id];
+  const business = businesses[id];
 
   return {
     business,

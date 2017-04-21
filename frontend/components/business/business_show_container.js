@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BusinessShow from './business_show';
-import { requestBusiness } from '../../actions/business_actions';
+import { requestBusinesses } from '../../actions/business_actions';
 
 
 const mapStateToProps = ({ businesses } , ownProps) => {
@@ -17,7 +17,7 @@ const mapStateToProps = ({ businesses } , ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
 
-    requestBusiness: (id) => dispatch(requestBusiness(id))
+    requestBusinesses: (id) => dispatch(requestBusinesses())
 
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import BusinessMap from './business_map.jsx';
-import BusinessIndexContainer from '../business_index_container';
+import BusinessIndex from '../business_index';
 import { toArray } from '../../../reducers/selectors';
 
 
@@ -12,7 +12,10 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestBusinesses();
+    debugger
+    if (!Object.keys(this.props.businesses).length) {
+      this.props.requestBusinesses();
+    }
   }
 
   render () {
@@ -21,7 +24,7 @@ class Search extends React.Component {
     return (
       <div className="search-main">
         <BusinessMap businesses= {businesses} />
-        <BusinessIndexContainer />
+        <BusinessIndex businesses={ this.props.businesses} requestBusinesses={this.props.requestBusinesses} />
       </div>
     );
 

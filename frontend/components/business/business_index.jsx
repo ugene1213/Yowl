@@ -4,18 +4,9 @@ import { toArray } from '../../reducers/selectors';
 
 export default class BusinessIndex extends React.Component {
 
-  componentWillMount() {
-    this.props.requestBusinesses();
-  }
-//   let businessList;
-//
-//   if (Object.keys(this.props.businesses).length > 0) {
-//
-//
-// }
-//
-
   render() {
+
+      console.log("businessIndexx");
 
         let counter = 1;
         const businesses = toArray(this.props.businesses);
@@ -31,7 +22,7 @@ export default class BusinessIndex extends React.Component {
             {businessList}
           </ul>
         </div>
-      );
+      )
 
   }
 

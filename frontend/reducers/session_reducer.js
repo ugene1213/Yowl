@@ -9,14 +9,14 @@ const _defaultSession = Object.freeze({
 
 
 const SessionReducer = (state = _defaultSession, action) => {
-  debugger 
+  debugger
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
-      return merge({}, _defaultSession, { currentUser });
+      return merge({}, state, { currentUser });
 
     case RECEIVE_ERRORS:
-      return merge({}, _defaultSession, { errors: action.errors});
+      return merge({}, state, { errors: action.errors});
 
     case LOGOUT:
       return merge({}, _defaultSession);
@@ -24,5 +24,31 @@ const SessionReducer = (state = _defaultSession, action) => {
       return state;
   }
 };
+
+// const SessionReducer = (state = { currentUser: null, errors: [] }, action) => {
+//   switch (action.type) {
+//     case RECEIVE_CURRENT_USER: {
+//       const nextState = merge({}, state);
+//       nextState.currentUser = action.currentUser;
+//       return nextState;
+//     }
+//     case RECEIVE_ERRORS: {
+//       const nextState = merge({}, state);
+//       nextState.errors = action.errors;
+//       nextState.currentUser = null;
+//       return nextState;
+//     }
+//     case LOGOUT: {
+//       const nextState = merge({}, state);
+//       nextState.errors = [];
+//       nextState.currentUser = null;
+//       return nextState;
+//     }
+//     default: {
+//       return state;
+//     }
+//   }
+// };
+
 
 export default SessionReducer;

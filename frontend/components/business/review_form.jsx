@@ -10,7 +10,6 @@ class ReviewForm extends React.Component {
       this.state = { rating: 5, body: ""};
       this.handleSubmit = this.handleSubmit.bind(this);
       this.navigateToBusinessShow = this.navigateToBusinessShow.bind(this);
-      this.update = this.update.bind(this);
     }
 
 
@@ -37,8 +36,7 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-      debugger
-
+      console.log("Reviewform");
       if (typeof this.props.business === "undefined") {
         return (
           <div>Getting the form....</div>

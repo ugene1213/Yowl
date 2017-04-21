@@ -93,6 +93,7 @@ export default class SessionForm extends React.Component {
   //   />
 
 	render() {
+    console.log("sessionform");
 		return (
       <div className="mega-container">
         <div className="login-form-container group">

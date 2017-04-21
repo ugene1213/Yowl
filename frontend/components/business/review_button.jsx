@@ -9,7 +9,6 @@ class ReviewButton extends React.Component {
   }
 
   _handleSubmit() {
-    debugger
     const businessId = this.props.id;
     const url = `/businesses/${businessId}/review`;
     hashHistory.push(url);

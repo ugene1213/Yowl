@@ -1,11 +1,11 @@
 
 
 export const fetchBusinesses = (success) => {
-
+  debugger 
   $.ajax({
 
     method: 'GET',
-    url: '/api/businesses',
+    url: 'api/businesses',
     success,
     error: () => console.log("There was an error getting businesses")
   });
@@ -16,7 +16,7 @@ export const fetchBusinesses = (success) => {
 export const fetchBusiness = (id, success) => {
   $.ajax({
     method: "GET",
-    url: `/api/businesses/${id}`,
+    url: `api/businesses/${id}`,
     success,
     error: () => console.log("There was an error getting this business")
   });

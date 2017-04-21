@@ -3,14 +3,12 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import App from './app'
 import { Provider } from 'react-redux';
 import SessionFormContainer from './session_form/session_form_container';
-import BusinessIndexContainer from './business/business_index_container';
 import BusinessShowContainer from './business/business_show_container';
 import SearchContainer from './business/map/search_container';
 import ReviewFormContainer from './business/review_form_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    debugger
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
@@ -18,8 +16,6 @@ const Root = ({ store }) => {
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    debugger
-
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
