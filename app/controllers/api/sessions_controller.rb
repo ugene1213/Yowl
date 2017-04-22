@@ -17,11 +17,11 @@ class Api::SessionsController < ApplicationController
   		end
   	end
 
-  	def destroy 
+  	def destroy
   		@user = current_user
   		if @user
   			logout
-        render 'static_pages/root.html.erb'
+        render json: {}
   		else
   			render(
           json: ["Nobody signed in"],

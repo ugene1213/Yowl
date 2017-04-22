@@ -23,6 +23,7 @@ export default class SessionForm extends React.Component {
 	redirectIfLoggedIn(){
 		if (this.props.loggedIn) {
 			hashHistory.push("/");
+      location.reload();
 		}
 	}
 
@@ -40,6 +41,7 @@ export default class SessionForm extends React.Component {
 
 
   genericUser(e) {
+    debugger
     e.preventDefault();
     this.props.processForm({user: {username:"generic",password:"genericpassword"}});
   }
@@ -94,6 +96,7 @@ export default class SessionForm extends React.Component {
 
 	render() {
     console.log("sessionform");
+    debugger
 		return (
       <div className="mega-container">
         <div className="login-form-container group">

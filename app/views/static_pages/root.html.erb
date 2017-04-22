@@ -3,8 +3,8 @@
       window.currentUser = <%= render("api/users/user.json.jbuilder",
       user: current_user).html_safe %>
       <% else  %>
-      window.currentUser = null 
+      window.currentUser = null
       <% end %>
 </script>
 
-<main id="root"></main>
+<main id="chibby"></main>

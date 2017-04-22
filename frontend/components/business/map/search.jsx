@@ -12,7 +12,6 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     if (!Object.keys(this.props.businesses).length) {
       this.props.requestBusinesses();
     }

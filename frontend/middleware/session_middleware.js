@@ -10,9 +10,11 @@ import { hashHistory } from 'react-router';
 const SessionMiddleware = ({ getState, dispatch }) => next => action => {
 
   const successCallback = (user) => dispatch(receiveCurrentUser(user));
-  const successLogOut = () => {
+  const successLogOut = (user) => {
+    console.log(user);
     next(action);
     hashHistory.push('/');
+    location.reload();
   };
   const errorCallback = (error) => {
     const errors = error.responseJSON;
@@ -25,7 +27,6 @@ const SessionMiddleware = ({ getState, dispatch }) => next => action => {
       signup(action.newUser, successCallback, errorCallback);
       return next(action);
     case LOGOUT:
-      debugger
       logout( successLogOut );
       break;
     case LOGIN:

@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
+    debugger
     window.store = store; //remove later
-    const root = document.getElementById('root');
+    const root = document.getElementById('chibby');
     ReactDOM.render(<Root store={store}/>, root);
 });

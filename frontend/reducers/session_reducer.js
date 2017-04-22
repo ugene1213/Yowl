@@ -9,9 +9,9 @@ const _defaultSession = Object.freeze({
 
 
 const SessionReducer = (state = _defaultSession, action) => {
-  debugger
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
+      debugger
       const currentUser = action.currentUser;
       return merge({}, state, { currentUser });
 
@@ -19,7 +19,10 @@ const SessionReducer = (state = _defaultSession, action) => {
       return merge({}, state, { errors: action.errors});
 
     case LOGOUT:
-      return merge({}, _defaultSession);
+      return {
+        currentUser: null,
+        errors: []
+      }
     default:
       return state;
   }

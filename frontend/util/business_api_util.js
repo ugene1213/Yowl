@@ -1,7 +1,6 @@
 
 
 export const fetchBusinesses = (success) => {
-  debugger 
   $.ajax({
 
     method: 'GET',
