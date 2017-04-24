@@ -22,13 +22,9 @@ export const fetchBusiness = (id, success) => {
 };
 
 
-export const createReview = (success, review ) => {
-
+export const createReview = (review ) => (
   $.ajax({
     method: "POST",
     url: 'api/reviews',
     data: review,
-    success,
-    error: () => console.log("There was a problem processing your review")
-  });
-};
+  }));

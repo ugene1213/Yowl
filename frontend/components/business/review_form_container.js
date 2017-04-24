@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
-import { requestBusiness, createReview } from '../../actions/business_actions';
+import { requestBusiness, createReview, receiveReviewErrors } from '../../actions/business_actions';
 
 
-const mapStateToProps = ({session, businesses}, ownProps) => {
+const mapStateToProps = ({session, businesses, errors}, ownProps) => {
   const { id } = ownProps.params;
   const business = businesses[id];
-
   return {
     business,
-    id
+    id,
+    errors
   };
 };
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     createReview: (review) => dispatch(createReview(review)),
-    requestBusiness: (id) => dispatch(requestBusiness(id))
+    requestBusiness: (id) => dispatch(requestBusiness(id)),
   };
 
 };

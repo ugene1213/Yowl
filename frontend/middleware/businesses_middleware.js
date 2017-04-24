@@ -1,5 +1,6 @@
 import { REQUEST_BUSINESS, REQUEST_BUSINESSES, RECEIVE_BUSINESSES,
-      CREATE_REVIEW, receiveBusiness, receiveBusinesses
+      CREATE_REVIEW, receiveBusiness, receiveBusinesses,
+      receiveReviewErrors
       } from '../actions/business_actions';
 
 import { fetchBusinesses, fetchBusiness, createReview } from '../util/business_api_util';
@@ -10,6 +11,15 @@ const BusinessesMiddleware = ({ getState, dispatch }) => next => action => {
 
   const success1 = (businesses) => dispatch(receiveBusinesses(businesses));
   const success2 = (business) => dispatch(receiveBusiness(business));
+  const error = (error) => {
+    const errors = error.responseJSON;
+
+    dispatch(receiveReviewErrors(errors));
+
+    return errors;
+
+
+  }
 
   switch(action.type) {
     case REQUEST_BUSINESSES:
@@ -19,7 +29,7 @@ const BusinessesMiddleware = ({ getState, dispatch }) => next => action => {
       fetchBusiness(action.id, success2);
       return next(action);
     case CREATE_REVIEW:
-      createReview(success2, action.review);
+      return createReview(action.review).then(success2, error);
       break;
     default:
       return next(action);

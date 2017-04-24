@@ -17,8 +17,10 @@ class ReviewForm extends React.Component {
       event.preventDefault();
       const businessId = parseInt(this.props.id);
       const review = Object.assign({}, { business_id: businessId }, this.state);
-      this.props.createReview({ review });
-      this.navigateToBusinessShow();
+      this.props.createReview({ review }).then(() => (
+        this.navigateToBusinessShow()
+      ), (errors) => console.log(errors)
+    );
     }
 
     navigateToBusinessShow() {
@@ -35,6 +37,15 @@ class ReviewForm extends React.Component {
       };
     }
 
+    renderErrors() {
+      return (
+        <ul>
+          {this.props.errors.map( (error, idx) => <li key={idx}>{ error }</li>)}
+        </ul>
+      )
+
+    }
+
     render() {
       console.log("Reviewform");
       if (typeof this.props.business === "undefined") {
@@ -49,7 +60,7 @@ class ReviewForm extends React.Component {
 
               <div className="review-page-header">
                 <h1 className="review-header-word">Write a Review</h1>
-
+                { this.renderErrors()}
                 <div className="review-business-info group">
                   <div className="review-business-info-specifics">
                     <Link to= {"/businesses/" + this.props.id} >

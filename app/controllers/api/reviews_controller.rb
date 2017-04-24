@@ -8,7 +8,7 @@ class Api::ReviewsController < ApplicationController
       @business = review.business
       render "/api/businesses/show"
     else
-      render json: review, status: :unprocessable_entity
+      render json: review.errors.full_messages, status: 422
     end
   end
 
