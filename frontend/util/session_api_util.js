@@ -12,7 +12,6 @@ export const signup = (user, success, error) => {
 
 
 export const login = (user, success, error) => {
-  debugger
 
   $.ajax({
     method: 'POST',

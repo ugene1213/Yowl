@@ -40,7 +40,6 @@ export default class SessionForm extends React.Component {
 
 
   genericUser(e) {
-    debugger
     e.preventDefault();
     this.props.processForm({user: {username:"generic",password:"genericpassword"}});
   }
@@ -88,13 +87,8 @@ export default class SessionForm extends React.Component {
 		);
 	}
 
-  // <img
-  //   src={window.yowlAssets.loginImage}
-  //   className="signup-logo"
-  //   />
 
 	render() {
-    debugger
 		return (
       <div className="mega-container">
         <div className="login-form-container group">
@@ -126,6 +120,10 @@ export default class SessionForm extends React.Component {
             </div>
 
             <div className="signup-logo-container">
+              <img
+                src={window.yowlAssets.loginImage}
+                className="signup-logo"
+                />
             </div>
           </form>
         </div>
