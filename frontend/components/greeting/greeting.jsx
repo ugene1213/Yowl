@@ -18,12 +18,12 @@ const sessionLinks = () => {
     </div>
   );
 };
-// <img src= { window.yowlAssets.genericUser } className="user-image" />
 
 const personalGreeting = (currentUser, logout) => (
   <div>
     <hgroup className="header-group group">
       <div className="header-user-info">
+        <img src= { window.yowlAssets.genericUser } className="user-image" />
         <div className="button-stuff">
           <h2 className="header-name">{currentUser.username}</h2>
           <br/>
