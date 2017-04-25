@@ -7,7 +7,7 @@ import ReviewButton from './review_button';
 class BusinessShow extends React.Component {
 
 
-  num() {
+  num(review) {
     const thing = parseInt(review);
 
     if (thing === 1) {
@@ -29,7 +29,6 @@ class BusinessShow extends React.Component {
     }
 
   }
-  // <div className="business-show-rating"><img src={window.yowlAssets[num(business.average_rating)]} className="yay" /></div>
 
   componentDidMount() {
     if (Object.keys(this.props.businesses).length === 0) {
@@ -39,10 +38,7 @@ class BusinessShow extends React.Component {
   }
 
 
-  // <img src= {window.yowlAssets[business.picture]} className="business-show-pic" />
   render() {
-    console.log("businessShow");
-
     if (Object.keys(this.props.businesses).length === 0) {
       return (
         <div></div>
@@ -56,6 +52,8 @@ class BusinessShow extends React.Component {
           <div className="business-show-header group">
             <div className="business-name-rating-pic">
               <h1 className="business-show-name">{ business.name }</h1>
+              <img src= {window.yowlAssets[business.picture]} className="business-show-pic" />
+              <div className="business-show-rating"><img src={window.yowlAssets[this.num(business.average_rating)]} className="yay" /></div>
               <div className="business-show-counter group">
                 <div className="business-show-num-reviews">{ business.reviews.length } reviews</div>
               </div>

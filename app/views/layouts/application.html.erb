@@ -2,9 +2,6 @@
 <html>
 <head>
   <title>Yowl</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
   <script type="text/javascript">
     window.yowlAssets = {
       loginImage: "<%= asset_path("signup_illustration.png") %>",
@@ -28,8 +25,8 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDj4BH7FgACnMESrJT_ctTxoTF9Q2VD__0" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
 
 </head>
 <body>

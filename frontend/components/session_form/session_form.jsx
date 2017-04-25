@@ -23,7 +23,6 @@ export default class SessionForm extends React.Component {
 	redirectIfLoggedIn(){
 		if (this.props.loggedIn) {
 			hashHistory.push("/");
-      location.reload();
 		}
 	}
 
@@ -95,7 +94,6 @@ export default class SessionForm extends React.Component {
   //   />
 
 	render() {
-    console.log("sessionform");
     debugger
 		return (
       <div className="mega-container">

@@ -11,10 +11,8 @@ const SessionMiddleware = ({ getState, dispatch }) => next => action => {
 
   const successCallback = (user) => dispatch(receiveCurrentUser(user));
   const successLogOut = (user) => {
-    console.log(user);
     next(action);
     hashHistory.push('/');
-    location.reload();
   };
   const errorCallback = (error) => {
     const errors = error.responseJSON;

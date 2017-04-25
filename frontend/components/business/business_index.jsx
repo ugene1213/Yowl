@@ -6,8 +6,6 @@ export default class BusinessIndex extends React.Component {
 
   render() {
 
-      console.log("businessIndexx");
-
         let counter = 1;
         const businesses = toArray(this.props.businesses);
         let businessList = businesses.map( (business) => {

@@ -18,9 +18,7 @@ class ReviewForm extends React.Component {
       const businessId = parseInt(this.props.id);
       const review = Object.assign({}, { business_id: businessId }, this.state);
       this.props.createReview({ review }).then(() => (
-        this.navigateToBusinessShow()
-      ), (errors) => console.log(errors)
-    );
+        this.navigateToBusinessShow()));
     }
 
     navigateToBusinessShow() {
@@ -28,7 +26,6 @@ class ReviewForm extends React.Component {
       hashHistory.push(businessUrl);
     }
 
-    // <img src={window.yowlAssets[this.props.business.picture]} className="review-header-logo" />
     update(property) {
       return e => {
         this.setState({
@@ -40,14 +37,13 @@ class ReviewForm extends React.Component {
     renderErrors() {
       return (
         <ul>
-          {this.props.errors.map( (error, idx) => <li key={idx}>{ error }</li>)}
+          {this.props.errors.map( (error, idx) => <li key={idx}>* { error }!</li>)}
         </ul>
       )
 
     }
 
     render() {
-      console.log("Reviewform");
       if (typeof this.props.business === "undefined") {
         return (
           <div>Getting the form....</div>
@@ -60,8 +56,8 @@ class ReviewForm extends React.Component {
 
               <div className="review-page-header">
                 <h1 className="review-header-word">Write a Review</h1>
-                { this.renderErrors()}
                 <div className="review-business-info group">
+                  <img src={window.yowlAssets[this.props.business.picture]} className="review-header-logo" />
                   <div className="review-business-info-specifics">
                     <Link to= {"/businesses/" + this.props.id} >
                       <div className="review-business-name">{this.props.business.name}</div>
@@ -73,6 +69,7 @@ class ReviewForm extends React.Component {
 
               <div className="review-form">
                 <h2 className="review-form-header">Your Review</h2>
+                { this.renderErrors()}
 
 
                   <form onSubmit={this.handleSubmit} >

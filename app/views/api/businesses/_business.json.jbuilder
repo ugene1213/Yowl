@@ -1,4 +1,4 @@
-json.extract! business, :id, :description, :name
+json.extract! business, :id, :description, :name, :picture
 
 
 json.reviews do

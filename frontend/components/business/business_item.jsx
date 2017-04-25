@@ -12,17 +12,14 @@ class BusinessItem extends React.Component {
   _handleClick() {
     hashHistory.push( "/businesses/" + this.props.business.id)
   }
-  // const imageSrc = business.picture;
 
-  // <div>
-  // <img src="http://s3.amazonaws.com/findaloo-pro/loos/images/000/000/006/original/streetview?1479688791" className="business-photo"/>
-  // </div>
   render() {
     const { business, counter } = this.props;
     const imageSrc = window.yowlAssets[business.picture];
 
     return (
         <li className="business-item group">
+            <img src={imageSrc} className="business-photo"/>
               <div className="business-item-info">
 
               <h4>

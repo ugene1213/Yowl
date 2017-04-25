@@ -4,7 +4,7 @@ import BusinessesMiddleware from './businesses_middleware';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
-  BusinessesMiddleware
+  BusinessesMiddleware,
 
 );
 
