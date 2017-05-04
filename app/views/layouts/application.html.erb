@@ -19,11 +19,17 @@
       three: "<%= asset_path("3.png") %>",
       four: "<%= asset_path("4.png") %>",
       five: "<%= asset_path("5.png") %>"
-    }
+    };
+
+    window.backgrounds = {
+        4: "<%= asset_path("restaurant4.jpg") %>",
+        2: "<%= asset_path("restaurant2.jpg") %>",
+        3: "<%= asset_path("restaurant3.jpg") %>",
+    };
 
   </script>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDj4BH7FgACnMESrJT_ctTxoTF9Q2VD__0" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDj4BH7FgACnMESrJT_ctTxoTF9Q2VD__0&libraries=places" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>

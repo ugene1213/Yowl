@@ -51,7 +51,7 @@ body {
 .header {
   background:#d32323;
   color: #fff;
-  padding: 20px;
+  padding-bottom: 10px;
 }
 
  /*this will be changed with an actual logo later */
@@ -81,6 +81,11 @@ body {
   font-size: 14px;
 }
 
+.header-info {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 
 .header-user-info {
   display: block;
@@ -102,6 +107,7 @@ body {
   /*float: right;*/
 }
 
+
 .header-button {
   /*float: right;*/
 }
@@ -109,7 +115,6 @@ body {
 .header-button:hover, .business-link:hover{
   text-decoration: underline;
 }
-
 
 li {
   list-style: none;
@@ -251,7 +256,7 @@ a, button, input[type="submit"] {
 .business-index {
   display: block;
   margin: 0 auto;
-  width: 1000px;
+  width: auto;
   border: 0.5px solid #ccc;
   padding: 0px 10px;
 }
@@ -261,6 +266,7 @@ a, button, input[type="submit"] {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .business-item {
@@ -579,4 +585,51 @@ input[type="radio"]:checked {
   display: block;
   height: 32px;
   width: 126px;
+}
+
+
+.search-area {
+  background-image: url('restaurant2.png');
+  background-size: cover;
+  min-width: 500px  ;
+  height: 570px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  background-position: center center;
+  box-shadow: inset 0 0 5px 2px #282a2d;
+}
+
+.search-bar {
+  background: white;
+  background: white;
+  min-width: 300px;
+  min-height: 40px;
+  border-radius: 4px 4px 4px 4px;
+
+}
+
+.search-bar input,label {
+  font-size: 20px;
+  min-height: inherit;
+  padding: 0px 5px;
+}
+
+.search-bar, label {
+  font-weight: bold;
+  color: #666; //type of gray
+}
+
+
+.search-submit {
+  background: #be2020; //this is dark red
+  color: white;
+}
+
+.search-submit:hover {
+  background: white;
+  color: darkgray;
+  border: 0px 1px solid gray
 }

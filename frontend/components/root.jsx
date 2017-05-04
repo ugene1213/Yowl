@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import BusinessShowContainer from './business/business_show_container';
 import SearchContainer from './business/map/search_container';
 import ReviewFormContainer from './business/review_form_container';
-
+import SearchField from './business/map/search_field';
 
 
 const Root = ({ store }) => {
@@ -36,6 +36,7 @@ const Root = ({ store }) => {
             <Route path='/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn } />
             <Route path='/businesses/:id' component= { BusinessShowContainer } />
             <Route path='/businesses/:id/review' component={ ReviewFormContainer } onEnter={_ensureLoggedIn } />
+            <Route path='/search' component={ SearchField } />
           </Route>
         </Router>
       </Provider>
