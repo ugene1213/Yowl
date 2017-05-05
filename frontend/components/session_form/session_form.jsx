@@ -91,41 +91,41 @@ export default class SessionForm extends React.Component {
 	render() {
 		return (
       <div className="mega-container">
+        <div className='yowl-header'>
+          <Link to='/'><img src='assets/logo.png' /></Link>
+        </div>
         <div className="login-form-container group">
-          {this.messageType()}
-          <br/>
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            { this.renderErrors() }
-            <div className="login-form">
-              <label className='username'>
+          <div className='non-pic-session-stuff'>
+            <div className='message'>
+              {this.messageType()}
+            </div>
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              { this.renderErrors() }
+              <div className="login-form">
                 <input type="text"
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.update("username")}
-                  className="login-input" />
-              </label>
-              <br/>
-              <label className="password">
+                  className="login-input username" />
                 <input type="password"
                   placeholder="Password"
                   value={this.state.password}
                   onChange={this.update("password")}
-                  className="login-input" />
-              </label>
+                  className="login-input password" />
 
-              <br/>
-              <input type="submit" value="Submit" id="hello" />
-              <br/>
+                <br/>
+                <input type="submit" value="Submit" id="hello" />
+                <br/>
 
-            </div>
-
-            <div className="signup-logo-container">
-              <img
-                src={window.yowlAssets.loginImage}
-                className="signup-logo"
-                />
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
+          <div className="signup-logo-container">
+            <img
+              src={window.yowlAssets.loginImage}
+              className="signup-logo"
+              />
+          </div>
         </div>
       </div>
 		);

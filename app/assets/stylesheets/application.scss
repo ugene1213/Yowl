@@ -55,17 +55,14 @@ body {
 }
 
  /*this will be changed with an actual logo later */
-.logo{
-  color: black;
-  display: block;
-  font-size: 32px;
-  font-family: "Arial Black", Gadget, sans-serif;
-  text-shadow:
-  -1px -1px 0 #fff,
-  1px -1px 0 #fff,
-  -1px 1px 0 #fff,
-  1px 1px 0 #fff;
-  float: left;
+
+.greeting-logo {
+    float: left;
+}
+
+.greeting-logo img {
+  width: 72px;
+  height: 36px;
 }
 
 .login-signup {
@@ -156,6 +153,20 @@ a, button, input[type="submit"] {
 
 }
 
+.yowl-header {
+  width: 100%;
+  background: #d32323;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yowl-header img {
+  width: 72px;
+  height: 36px;
+}
+
 .header-logo {
   display: block;
   background: #d32323;
@@ -167,15 +178,23 @@ a, button, input[type="submit"] {
 .login-form-container{
   display: block;
   margin: 0 auto;
-  border: 1px solid black;
   width: 900px;
-  padding: 10px;
-  min-height: 900px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  height: 50px;
+}
+
+.login-form-box {
+    margin-top: 10px;
 }
 
 .login-form {
   display: block;
-  float: left;
   margin: 10px;
 
 }
@@ -186,27 +205,28 @@ a, button, input[type="submit"] {
   border: 1px solid #ccc;
   padding: 5px;
   width: 300px;
-  border: 10%;
 }
 
 .login-form > input[type="submit"] {
+    margin-top: 10px;
     color: #fff;
     background: #d90007;
     text-align: center;
     display: block;
 }
 
+.password{
+  margin-top: 10px;
+}
+
 .form-header {
   color: red;
   font-size: 24px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   float: left;
   display: block;
   width: 100%;
-  margin-top: 100px;
-  padding-left: 85px;
-  margin-bottom: 24px
 }
 
 .login-signup-redirect, .generic-user {
@@ -239,7 +259,6 @@ a, button, input[type="submit"] {
   display: block;
   width: auto;
   height: 100%;
-  float: right;
 }
 
 /* This section is for the business index stuff */
@@ -591,17 +610,55 @@ input[type="radio"]:checked {
 .search-area {
   background-image: url('restaurant2.png');
   background-size: cover;
-  min-width: 500px  ;
+  min-width: 500px;
   height: 570px;
   width: auto;
-  display: flex;
-  align-items: center;
   justify-content: center;
   background-color: black;
   background-position: center center;
-  box-shadow: inset 0 0 5px 2px #282a2d;
 }
 
+.search-greeting{
+  height: 100px;
+  width: 57%;
+}
+
+.search-greeting li {
+  padding-top: 20px;
+  float: left;
+  font-weight: bold;
+}
+
+.search-greeting .sign-up {
+  background-color:inherit;
+  border: 2px solid white;
+  margin-right: 12px;
+}
+
+.search-greeting .sign-up:hover {
+  background: white;
+  color: #666;
+}
+
+.search-greeting .login {
+  background: inherit;
+}
+
+.search-greeting .login:hover {
+  border-bottom: 2px solid white;
+}
+
+.search-content {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-greeting * {
+  color: white;
+}
 .search-bar {
   background: white;
   background: white;
@@ -617,7 +674,7 @@ input[type="radio"]:checked {
   padding: 0px 5px;
 }
 
-.search-bar, label {
+.search-bar label {
   font-weight: bold;
   color: #666; //type of gray
 }
@@ -631,5 +688,9 @@ input[type="radio"]:checked {
 .search-submit:hover {
   background: white;
   color: darkgray;
-  border: 0px 1px solid gray
+  border: 0px 1px solid gray;
+}
+
+.search-logo {
+  margin-bottom: 20px;
 }

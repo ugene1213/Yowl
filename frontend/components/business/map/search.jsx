@@ -3,6 +3,7 @@ import BusinessMap from './business_map.jsx';
 import BusinessIndex from '../business_index';
 import { toArray } from '../../../reducers/selectors';
 import SearchField from './search_field';
+import GreetingContainer from '../../greeting/greeting_container';
 
 
 class Search extends React.Component {
@@ -26,7 +27,13 @@ class Search extends React.Component {
     return (
       <div className="search-main">
         <div className='search-area'>
-          <SearchField />
+          <div className='search-content'>
+            <div className="search-greeting group">
+              <GreetingContainer />
+            </div>
+            <img src='assets/logo.png' className='search-logo'/>
+            <SearchField />
+          </div>
         </div>
         <BusinessIndex businesses={ this.props.businesses} requestBusinesses={this.props.requestBusinesses} />
       </div>
