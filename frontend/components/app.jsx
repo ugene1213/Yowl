@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import GreetingContainer from './greeting/greeting_container';
-// import GreetingContainer from './greeting/greeting_container';
-
+import SearchField from './business/map/search_field';
 const App = (props) => {
 
     const { pathname } = props.location;
@@ -15,13 +14,17 @@ const App = (props) => {
     } else {
       return (
         <div className="main-page">
-          <div className="header group">
-            <div className='header-info group'>
+          <div className="header">
+            <div className='header-info'>
               <div className='greeting-logo'>
-                <img src='assets/logo.png'/>
-                <Link to="/" className="show-to-index" />
+                <Link to="/">
+                  <img src='assets/logo.png'/>
+                </Link>
               </div>
-              <div><GreetingContainer location={props.location} /></div>
+                <SearchField location={props.location}/>
+              <div>
+                <GreetingContainer location={props.location} />
+              </div>
             </div>
           </div>
           {props.children}

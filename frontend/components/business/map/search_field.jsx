@@ -45,19 +45,26 @@ class SearchField extends React.Component {
     }
   }
 
-  handleSubmit(e) {
+    handleSubmit(e) {
+    const location = this.location.formatted_address;
+    debugger
+
     e.preventDefault();
+    hashHistory.push({
+      pathname: `/business-map/${location}`,
+      query: { location }
+    });
 
   }
 
   render() {
     return (
 
-      <form className='search-bar' onSubmit={ this.handleSubmit }>
+        <form className={ this.props.location.pathname === '/' ? 'search-bar' : 'search-bar-two'} onSubmit={ this.handleSubmit }>
         <label>Near</label>
-        <input type='text' className='search' id="searchTextField" placeholder="New York, NY"
+        <input type='text' className={ this.props.location.pathname === '/' ? "search" : 'search-two' } id="searchTextField" placeholder="New York, NY"
           onChange={this.update('location')}/>
-        <input type='submit' className='search-submit' value="Go"/>
+        <input type='submit' className= { this.props.location.pathname === '/' ? 'search-submit' : 'search-submit-two'} value="Go"/>
       </form>
 
     );

@@ -32,10 +32,10 @@ class Search extends React.Component {
               <GreetingContainer />
             </div>
             <img src={window.yowlAssets.logo} className='search-logo'/>
-            <SearchField />
+            <SearchField location={ this.props.location }  />
           </div>
         </div>
-        <BusinessIndex businesses={ this.props.businesses} requestBusinesses={this.props.requestBusinesses} />
+        <BusinessIndex businesses={ this.props.businesses } requestBusinesses={this.props.requestBusinesses} />
       </div>
     );
 
