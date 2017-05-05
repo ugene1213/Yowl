@@ -219,6 +219,21 @@ a, button, input[type="submit"] {
   margin-top: 10px;
 }
 
+.signup-login-footer {
+  width: 100%;
+  min-height: 462px;
+  background-color: rgba(226, 226, 226, 0.62);
+  border-top: 1px solid lightgray;
+  display: flex;
+  justify-content:  center;
+  align-items: flex-end;
+
+}
+
+.copyright {
+  padding-bottom: 20px;
+}
+
 .form-header {
   color: red;
   font-size: 24px;
@@ -228,6 +243,7 @@ a, button, input[type="submit"] {
   display: block;
   width: 100%;
 }
+
 
 .login-signup-redirect, .generic-user {
   font-size: 14px;
@@ -608,7 +624,7 @@ input[type="radio"]:checked {
 
 
 .search-area {
-  background-image: url('restaurant2.png');
+  background-image: image_url('restaurant2.png');
   background-size: cover;
   min-width: 500px;
   height: 570px;

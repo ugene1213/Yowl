@@ -31,7 +31,7 @@ class Search extends React.Component {
             <div className="search-greeting group">
               <GreetingContainer />
             </div>
-            <img src='assets/logo.png' className='search-logo'/>
+            <img src={window.yowlAssets.logo} className='search-logo'/>
             <SearchField />
           </div>
         </div>
