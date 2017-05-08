@@ -7,7 +7,7 @@ import BusinessShowContainer from './business/business_show_container';
 import SearchContainer from './business/map/search_container';
 import ReviewFormContainer from './business/review_form_container';
 import SearchField from './business/map/search_field';
-import MapPage from './business/map/map_page';
+import MapPageContainer from './business/map/map_page_container';
 
 
 const Root = ({ store }) => {
@@ -35,7 +35,7 @@ const Root = ({ store }) => {
             <IndexRoute component={ SearchContainer } />
             <Route path='/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn }/>
             <Route path='/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn } />
-            <Route path='/business-map/:location' component={MapPage} />
+            <Route path='/business-map/:location' component={MapPageContainer} />
             <Route path='/businesses/:id' component= { BusinessShowContainer } />
             <Route path='/businesses/:id/review' component={ ReviewFormContainer } onEnter={_ensureLoggedIn } />
             <Route path='/search' component={ SearchField } />

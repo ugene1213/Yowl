@@ -2,33 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 import ReviewShow from './review_show';
 import ReviewButton from './review_button';
+import { starRating } from '../../util/business_api_util';
 
 
 class BusinessShow extends React.Component {
-
-
-  num(review) {
-    const thing = parseInt(review);
-
-    if (thing === 1) {
-      return "one";
-    }
-    else if (thing === 2) {
-      return "two";
-    }
-    else if (thing === 3) {
-      return "three";
-    }
-    else if(thing === 4) {
-      return "four";
-    }
-    else if (thing === 5) {
-      return "five";
-    } else {
-      return "zero";
-    }
-
-  }
 
   componentDidMount() {
     if (Object.keys(this.props.businesses).length === 0) {
@@ -53,7 +30,7 @@ class BusinessShow extends React.Component {
             <div className="business-name-rating-pic">
               <h1 className="business-show-name">{ business.name }</h1>
               <img src= {window.yowlAssets[business.picture]} className="business-show-pic" />
-              <div className="business-show-rating"><img src={window.yowlAssets[this.num(business.average_rating)]} className="yay" /></div>
+              <div className="business-show-rating"><img src={window.yowlAssets[starRating(business.average_rating)]} className="yay" /></div>
               <div className="business-show-counter group">
                 <div className="business-show-num-reviews">{ business.reviews.length } reviews</div>
               </div>

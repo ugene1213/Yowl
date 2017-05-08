@@ -28,3 +28,25 @@ export const createReview = (review ) => (
     url: 'api/reviews',
     data: review,
   }));
+
+export const starRating = (review) => {
+    const thing = parseInt(review);
+
+    if (thing === 1) {
+      return "one";
+    }
+    else if (thing === 2) {
+      return "two";
+    }
+    else if (thing === 3) {
+      return "three";
+    }
+    else if(thing === 4) {
+      return "four";
+    }
+    else if (thing === 5) {
+      return "five";
+    } else {
+      return "zero";
+    }
+};

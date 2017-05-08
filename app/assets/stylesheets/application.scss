@@ -296,7 +296,7 @@ a, button, input[type="submit"] {
   display: block;
   margin: 0 auto;
   width: auto;
-  border: 0.5px solid #ccc;
+  border-top: 0.5px solid #ccc;
   padding: 0px 10px;
 }
 
@@ -312,6 +312,7 @@ a, button, input[type="submit"] {
   border-bottom: 1px solid #e6e6e6; /*This is a type of gray*/
   padding-top: 12px;
   padding-bottom: 11px;
+  min-width: 500px;
 }
 
 .business-item:first-child {
@@ -329,6 +330,14 @@ a, button, input[type="submit"] {
 
 .business-link {
   color: #0073bb;
+}
+
+.businesss-show-address {
+  float: right;
+}
+
+.business-description {
+  margin-top: 10px;
 }
 
 .business-show-header {
@@ -359,7 +368,6 @@ a, button, input[type="submit"] {
 
 
 .business-show-rating {
-  float: left;
   display: block;
 }
 
@@ -741,7 +749,7 @@ input[type="radio"]:checked {
 
 .map-page-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   height: 1000px;
 }
 

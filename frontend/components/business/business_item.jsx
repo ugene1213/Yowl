@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import { starRating } from '../../util/business_api_util';
 
 
 class BusinessItem extends React.Component {
@@ -25,6 +26,14 @@ class BusinessItem extends React.Component {
               <h4>
                   { counter }.<button onClick={ this._handleClick } className="business-link">{ business.name }</button>
               </h4>
+
+              <div className="business-show-rating">
+                <img src={window.yowlAssets[starRating(business.average_rating)]} className='yay' />
+              </div>
+
+              <div className='business-show-address'>
+                {business.address}
+              </div>
 
               <p className="business-description">
                 { business.description }
