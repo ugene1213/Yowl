@@ -23,7 +23,6 @@ class SearchField extends React.Component {
       const input = document.getElementById('searchTextField');
       const options = {
         componentRestrictions: {country: 'us'},
-        types: ['(cities)']
       };
 
       this.autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -47,7 +46,6 @@ class SearchField extends React.Component {
 
     handleSubmit(e) {
     const location = this.location.formatted_address;
-    debugger
 
     e.preventDefault();
     hashHistory.push({

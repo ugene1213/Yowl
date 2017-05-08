@@ -594,13 +594,6 @@ a, button, input[type="submit"] {
   border: 1px solid black;
 }
 
-.map-container {
-  width: 500px;
-  height: 500px;
-  border: 1px solid blue;
-  margin: 10px auto;
-}
-
 input[type="radio"] {
     -webkit-appearance: none;
     width: 27px;
@@ -698,6 +691,10 @@ input[type="radio"]:checked {
   flex-shrink: 0;
 }
 
+.search {
+  width: 500px;
+}
+
 
 
 .search-bar input,label {
@@ -740,4 +737,18 @@ input[type="radio"]:checked {
 
 .search-logo {
   margin-bottom: 20px;
+}
+
+.map-page-container {
+  display: flex;
+  justify-content: flex-end;
+  height: 1000px;
+}
+
+.map-container {
+  margin-top: 20px;
+  height: 500px;
+  width: 500px;
+  padding-bottom: 10px;
+  border: 1px solid blue;
 }
