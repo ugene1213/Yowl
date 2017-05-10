@@ -18,7 +18,7 @@ const App = (props) => {
             <div className='header-info'>
               <div className='greeting-logo'>
                 <Link to="/">
-                  <img src='assets/logo.png'/>
+                  <img src={window.yowlAssets.logo}/>
                 </Link>
               </div>
                 <SearchField location={props.location}/>
