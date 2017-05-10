@@ -92,7 +92,7 @@ export default class SessionForm extends React.Component {
 		return (
       <div className="mega-container">
         <div className='yowl-header'>
-          <Link to='/'><img src= {window.yowlAssets.logo} /></Link>
+          <Link to='/'><img src='assets/logo.png' /></Link>
         </div>
         <div className="login-form-container group">
           <div className='non-pic-session-stuff'>
