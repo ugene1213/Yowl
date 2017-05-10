@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewShow from './review_show';
-
+import { starRating } from '../../util/business_api_util';
 const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
 
   const num = (review) => {
@@ -36,11 +36,16 @@ const ReviewItem = ({ review: {created_at, body, rating, user}}) => {
 
       <div className="review-main">
         <div className="review-rating-date group">
-          <div className={"review-rating"} ><img src={window.yowlAssets[num(rating)]} className="yay" /></div>
+          <div className={`star-${starRating(rating)}`}>
+          </div>
           <div className="review-date">{created_at.slice(0,10)}</div>
         </div>
 
-        <div className="review-body">{body}</div>
+        <div className="review-body">
+          <p>
+            {body}
+          </p>
+        </div>
       </div>
 
     </li>

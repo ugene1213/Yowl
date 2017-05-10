@@ -12,34 +12,101 @@ class BusinessShow extends React.Component {
       this.props.requestBusinesses();
     }
     window.scrollTo(0,0);
+    // window.addEventListener('DOMContentLoaded',
+    // this.googleMap.bind(this));
+    if(this.refs.map) {
+      this.googleMap();
+    }
+
+
+  }
+  componentDidUpdate() {
+    if (this.refs.map) {
+      this.googleMap();
+    }
+    console.log('my name is');
   }
 
+  googleMap() {
+    const business = this.props.businesses[this.props.businessId];
+    this.geocoder = new google.maps.Geocoder();
+    const mapDomNode = this.refs.map;
+    const mapOptions = {
+      center: {lat: 40.7831, lng: 73.9712},
+      zoom: 20,
+      zoomControl: true,
+      streetViewControl:false,
+
+    };
+    this.map = new google.maps.Map(mapDomNode, mapOptions);
+    if (typeof this.location === 'undefined') {
+      this.geocoder.geocode({ address: business.address },
+        (result, status) => {
+
+          if (status == 'OK') {
+            this.location = result[0].geometry.location;
+            this.map.setCenter(result[0].geometry.location);
+            this.marker = new google.maps.Marker({
+              map: this.map,
+              position: result[0].geometry.location
+             });
+          } else {
+            alert('Geocode not successful: ' + status);
+          }
+        });
+    } else {
+
+      this.map.setCenter(this.location);
+      this.marker = new google.maps.Marker({
+        map: this.map,
+        position: this.location
+       });
+    }
+
+  }
 
   render() {
+
     if (Object.keys(this.props.businesses).length === 0) {
-      return (
-        <div></div>
-      )
-    } else {
+      return <div>Loading.....</div>
+    }
+    else {
       const business = this.props.businesses[this.props.businessId];
       const businessId = this.props.businessId;
       return (
         <div className="Business-show-page">
           <br/>
           <div className="business-show-header group">
-            <div className="business-name-rating-pic">
+            <div className="business-name-pic">
               <h1 className="business-show-name">{ business.name }</h1>
-              <img src= {window.yowlAssets[business.picture]} className="business-show-pic" />
-              <div className="business-show-rating"><img src={window.yowlAssets[starRating(business.average_rating)]} className="yay" /></div>
-              <div className="business-show-counter group">
-                <div className="business-show-num-reviews">{ business.reviews.length } reviews</div>
+              <div className='counter-rating-review-container'>
+                <div className="business-show-counter-rating">
+                  <div className={`star-${starRating(business.average_rating)}`}>
+                  </div>
+                  <div className="business-show-num-reviews">{ business.reviews.length } reviews</div>
+                </div>
+                <div className="business-show-review-button"><ReviewButton id={businessId} business={business}/></div>
+              </div>
+
+              <div className='business-pics-container'>
+                <div className='business-map-info'>
+                  <div className='business-map-container'>
+                    <div className='business-show-map' id='the-map' ref='map'>
+                    </div>
+                  </div>
+
+                  <div className='business-map-address'>
+                    {business.address}
+                  </div>
+                </div>
+                <img src= {window.yowlAssets[business.picture]} className="business-show-pic" />
               </div>
             </div>
-            <div className="business-show-review-button"><ReviewButton id={businessId} business={business}/></div>
             <br/>
+
           </div>
 
-          <br/>
+
 
           <div className="business-show-reviews">
 
@@ -48,8 +115,9 @@ class BusinessShow extends React.Component {
             <ReviewShow business= { business } num={10} />
           </div>
         </div>
-      )
+      );
     }
+
   }
 
 }

@@ -56,7 +56,6 @@ class MapPage extends React.Component {
     window.places = this.places;
     this.setLocation(this.props.location.query.location);
     this.MarkerManager = new MarkerManager(this.map, this.geocoder);
-    debugger
     this.MarkerManager.updateMarkers(this.props.businesses);
     window.MarkerManafer = this.MarkerManager;
   }

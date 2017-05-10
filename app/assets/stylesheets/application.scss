@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, header, nav, h1, a, ul, li,
+html, body, header, nav, h1, a, ul,h4, li,
 strong, main, section, img, div, h2, p,
 form, fieldset, label, input, textarea,
 button, article, footer, small {
@@ -29,6 +29,7 @@ button, article, footer, small {
   vertical-align: inherit;
   color: inherit;
   background: transparent;
+
 }
 div{
   display: block;
@@ -52,6 +53,7 @@ body {
   background:#d32323;
   color: #fff;
   padding-bottom: 10px;
+  width: 100%;
 }
 
  /*this will be changed with an actual logo later */
@@ -76,6 +78,8 @@ body {
 
 .header-group {
   font-size: 14px;
+  margin-left: 14px;
+  margin-top: 10px;
 }
 
 .header-info {
@@ -85,12 +89,6 @@ body {
   justify-content: center;
   align-items: center;
 
-}
-
-
-.header-user-info {
-  display: block;
-  float: right;
 }
 
 .user-image {
@@ -330,10 +328,15 @@ a, button, input[type="submit"] {
 
 .business-link {
   color: #0073bb;
+  margin-left: 5px;
 }
 
-.businesss-show-address {
-  float: right;
+.business-header {
+  margin-bottom: 5px;
+}
+
+.business-show-address {
+  margin-top: 5px;
 }
 
 .business-description {
@@ -342,17 +345,13 @@ a, button, input[type="submit"] {
 
 .business-show-header {
   padding: 0 20px;
+  display: flex;
+  justify-content: center;
 }
 
 
 .business-show-header{
   margin: 0 auto;
-  display: block;
-}
-
-.business-name-rating-pic {
-  display: block;
-  float: left;
 }
 
 .business-show-name {
@@ -362,10 +361,10 @@ a, button, input[type="submit"] {
   display: block;
 }
 
-.business-show-counter{
-  display: block;
+.business-show-counter-rating {
+  display: flex;
+  flex-direction: column;
 }
-
 
 .business-show-rating {
   display: block;
@@ -373,17 +372,14 @@ a, button, input[type="submit"] {
 
 .business-show-num-reviews {
   color: #666;
-  display: block;
-  float: left;
-  width: 100px;
+  width: 80px;
   height: 20px;
-  padding-top: 7px;
+  text-align: center;
 }
 
 .business-show-review-button{
   text-align: center;
   display: block;
-  float: right;
   border: 1px solid #8d0005;
   width: 159px;
   color: white;
@@ -393,13 +389,20 @@ a, button, input[type="submit"] {
 
 }
 
+.counter-rating-review-container {
+  display: flex;
+  min-width: 320px;
+  width: 609px;
+  justify-content: space-between;
+}
+
 .review-button{
   padding: 8px;
   font-weight: bold;
 }
 
 .business-show-pic{
-  display: block;
+  margin-top: 10px;
   width: 250px;
   height: 250px;
   border: 1px solid black;
@@ -427,21 +430,17 @@ a, button, input[type="submit"] {
   color: black;
 }
 
-.reviews-list:last-child {
-  border-bottom: 1px solid lightgray;
-}
-
 .review-content {
-  display: block;
-  margin-bottom: 20px;
+  display: flex;
   border-top: 1px solid lightgray;
   padding: 17px 0 16px 0;
 }
 
 .review-user-info {
-  display: block;
   float: left;
-  padding: 0 15px;
+  padding: 0 8px;
+  min-width: 200px;
+
 }
 
 .reviewer-pic {
@@ -464,21 +463,18 @@ a, button, input[type="submit"] {
 }
 
 .review-main {
-  float: left;
-  display: block;
   width: 600px;
-  padding: 0 15px;
 }
 
-.review-rating {
-  display: block;
-  float: left;
-  margin-right: 5px;
+
+
+.review-rating-date {
+  display: flex;
 }
 
 .review-date {
-  display: block;
-  float: left;
+  height: 20px;
+  margin-left: 10px;
 }
 
 .review-body{
@@ -486,7 +482,10 @@ a, button, input[type="submit"] {
 }
 
 .review-page {
+  display: flex;
+  justify-content: center;
   background: white;
+  min-width: 1199px;
 }
 
 .review-page h1 {
@@ -499,7 +498,6 @@ a, button, input[type="submit"] {
 .review-page-review-section {
   width: 700px;
   display: block;
-  float: left;
   padding: 20px 20px 20px 0;
   padding-left: 20px;
 }
@@ -548,10 +546,8 @@ a, button, input[type="submit"] {
 }
 
 .review-page-old-reviews {
-  float: right;
-  display: block;
-  width: 400px;
-  padding: 7px;
+  width: 439px;
+  padding: 20px;
   border-left: 1px solid lightgray;
   min-height: 500px;
 }
@@ -594,6 +590,11 @@ a, button, input[type="submit"] {
 
 }
 
+select {
+  overflow: hidden;
+  background-image: image_url('stars.png');
+}
+
 .review-cancel:hover {
   text-decoration: underline;
 }
@@ -605,13 +606,17 @@ a, button, input[type="submit"] {
 input[type="radio"] {
     -webkit-appearance: none;
     width: 27px;
-    height: 27px;
+    height: 24px;
     background-image: image_url("stars.png");
     vertical-align: bottom;
 }
 
 input[type="radio"]:checked {
-  background-position: 30px 30px;
+  background-position: 0 4.4%;
+}
+
+input[type="radio"]:checked + input {
+  background-color: white;
 }
 
 .review-rating {
@@ -620,13 +625,6 @@ input[type="radio"]:checked {
   width: 126px;
   height: 32px;
 }
-
-.yay {
-  display: block;
-  height: 32px;
-  width: 126px;
-}
-
 
 .search-area {
   background-image: image_url('restaurant2.png');
@@ -759,4 +757,74 @@ input[type="radio"]:checked {
   width: 500px;
   padding-bottom: 10px;
   border: 1px solid blue;
+}
+
+.star-five   {
+  background-image: image_url('stars.png');
+  width: 132px;
+  height: 18px;
+  background-position: 0% 74.2%;
+}
+
+.star-one {
+  background-image: image_url('stars.png');
+  width: 132px;
+    height: 18px;
+    background-position: 0% 47.6%;
+}
+
+.star-two {
+  background-image: image_url('stars.png');
+  width: 132px;
+  height: 18px;
+  background-position: 0% 54.3%;
+}
+.star-three {
+  background-image: image_url('stars.png');
+  width: 132px;
+  height: 18px;
+  background-position: 0% 60.9%;
+}
+.star-four {
+  background-image: image_url('stars.png');
+  width: 132px;
+  height: 18px;
+  background-position: 0% 67.6%;
+}
+.star-zero {
+  background-image: image_url('stars.png');
+  width: 132px;
+  height: 18px;
+  background-position: 0% 44.3%;
+}
+
+.business-map-info {
+  height: 276px;
+  width: 300px;
+  background-color: #fff;
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  flex-direction: column;
+}
+
+.business-map-container {
+  height: 220px;
+  width: 286px;
+  border: 1px solid gray;
+  margin-top: 6px;
+}
+
+.business-show-map {
+  width: 100%;
+  height: 100%;
+}
+
+.business-map-address {
+  font-weight: bolder;
+}
+
+.business-pics-container {
+  display: flex;
+  margin-top: 10px;
 }

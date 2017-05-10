@@ -23,12 +23,12 @@ class BusinessItem extends React.Component {
             <img src={imageSrc} className="business-photo"/>
               <div className="business-item-info">
 
-              <h4>
+              <h4 className='business-header'>
                   { counter }.<button onClick={ this._handleClick } className="business-link">{ business.name }</button>
               </h4>
 
-              <div className="business-show-rating">
-                <img src={window.yowlAssets[starRating(business.average_rating)]} className='yay' />
+              <div className={`star-${starRating(business.average_rating)}`}>
+
               </div>
 
               <div className='business-show-address'>

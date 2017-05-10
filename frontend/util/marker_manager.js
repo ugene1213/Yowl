@@ -12,7 +12,8 @@ export default class MarkerManager {
     this._businessesToAdd = this._businessesToAdd.bind(this);
     this.updateMarkers = this.updateMarkers.bind(this);
     this.getPos = this.getPos.bind(this);
-    this.actuallyCreateMarker = this.actuallyCreateMarker;
+    this.actuallyCreateMarker = this.actuallyCreateMarker.bind(this);
+    this._businessesToDelete = this._businessesToDelete.bind(this);
   }
 
   updateMarkers(businesses) {
@@ -22,18 +23,28 @@ export default class MarkerManager {
       this.businesses = businesses;
     }
     this._businessesToAdd().forEach(this._createMarkerFromBusiness);
+    this._businessesToDelete().forEach(this.deleteMarker);
   }
 
   _businessesToAdd() {
-    debugger
     if (Object.keys(this.businesses)) {
-      debugger
       const currentBusinesses = Object.keys(this.markers);
       return Object.keys(this.businesses).filter( businessId => !currentBusinesses.includes(businessId));
     }
   }
 
+  _businessesToDelete() {
+    const currentBusinesses = Object.keys(this.markers);
+    return Object.keys(this.businesses).filter( (businessId) => {
+      debugger
+      const distance = google.maps.geometry.spherical.computeDistanceBetween(this.map.getCenter(),
+      this.savedLocations[businessId]);
+      return distance < 600;
+    });
+  }
+
   _createMarkerFromBusiness( businessId ) {
+
     if (!this.savedLocations[businessId]) {
       this.getPos(this.businesses[businessId]);
     } else {
@@ -64,6 +75,12 @@ export default class MarkerManager {
     });
     // marker.addListener('click', () => this.handleClick(business));
     this.markers[businessId] = marker;
+  }
+
+  deleteMarker(businessId) {
+    const marker = this.markers[businessId];
+
+    marker.setMap(null);
   }
 
 }

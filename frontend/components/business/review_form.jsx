@@ -7,7 +7,7 @@ class ReviewForm extends React.Component {
 
     constructor(props) {
       super(props);
-      this.state = { rating: 5, body: ""};
+      this.state = { rating: 0, body: ""};
       this.handleSubmit = this.handleSubmit.bind(this);
       this.navigateToBusinessShow = this.navigateToBusinessShow.bind(this);
     }
@@ -75,31 +75,31 @@ class ReviewForm extends React.Component {
                   <form onSubmit={this.handleSubmit} >
                     <div className="review-form-actual">
 
-                      1<input type="radio"
+                      <input type="radio"
                         className="review-rating-number 1"
                         name="rating"
                         value="1"
                         onChange={this.update("rating")}/>
-                      2<input type="radio"
+                      <input type="radio"
                         className="review-rating-number 2"
                         name="rating"
                         value="2"
                         onChange={this.update("rating")}/>
-                      3<input type="radio"
+                      <input type="radio"
                         className="review-rating-number 3"
                         name="rating"
                         value="3"
                         onChange={this.update("rating")}/>
-                      4<input type="radio"
+                      <input type="radio"
                         className="review-rating-number 4"
                         name="rating"
                         value="4"
                         onChange={this.update("rating")}/>
-                      5<input type="radio"
-                        className="review-rating-number 5"
+                      <input type="radio"
+                        className="review-rating-number-5"
                         name="rating"
                         value="5"
-                        onChange={this.update("rating")}/>
+                        onChange={this.update("rating")} />
 
                       <label>Select Your Rating</label>
                       <br/>
