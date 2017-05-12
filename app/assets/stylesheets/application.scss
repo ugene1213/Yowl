@@ -29,7 +29,7 @@ button, article, footer, small {
   vertical-align: inherit;
   color: inherit;
   background: transparent;
-
+  box-sizing: border-box;
 }
 div{
   display: block;
@@ -294,7 +294,7 @@ a, button, input[type="submit"] {
   display: block;
   margin: 0 auto;
   width: auto;
-  border-top: 0.5px solid #ccc;
+  // border-top: 0.5px solid #ccc;
   padding: 0px 10px;
 }
 
@@ -306,17 +306,24 @@ a, button, input[type="submit"] {
   text-align: center;
 }
 
-.business-item {
-  border-bottom: 1px solid #e6e6e6; /*This is a type of gray*/
-  padding-top: 12px;
-  padding-bottom: 11px;
-  min-width: 500px;
+.business-lists-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
 }
 
-.business-item:first-child {
-  padding-top: 0px;
+.business-item {
+  border: 1px solid #e6e6e6; /*This is a type of gray*/
+  padding-top: 12px;
   padding-bottom: 11px;
+  padding-left: 12px;
+  // min-width: 500px;
+  height: 300px;
+  width: 275px;
+  max-height: 300px;
+
 }
+
 
 .business-photo {
   float: left;
@@ -828,4 +835,13 @@ input[type="radio"]:checked + input {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
+}
+
+.new-businesses-title {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 16px;
+  color: #be2020;
+  text-align: center;
+
 }

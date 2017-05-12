@@ -35,7 +35,13 @@ class Search extends React.Component {
             <SearchField location={ this.props.location }  />
           </div>
         </div>
-        <BusinessIndex businesses={ this.props.businesses } requestBusinesses={this.props.requestBusinesses} />
+
+        <div className='new-businesses-container'>
+          <h1 className='new-businesses-title'>Recent Businesses</h1>
+
+          <BusinessIndex businesses={ this.props.businesses } requestBusinesses={this.props.requestBusinesses} />
+
+        </div>
       </div>
     );
 

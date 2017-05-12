@@ -14,9 +14,7 @@ export default class BusinessIndex extends React.Component {
       );
       return(
         <div className="business-index group">
-          <br/>
-          <h1 className="business-index-header">Businesses</h1>
-          <ul>
+          <ul className='business-lists-container'>
             {businessList}
           </ul>
         </div>
