@@ -20,7 +20,7 @@ Users can create a an account and log in with account. The back end authenticati
 
 When logged in, users can write reviews for restaurants in the database. Currently, users can only write reviews for pre-seeded restaurants in the database. I would like to add the ability for user's to create new businesses.
 
-![reviews](app/assets/images/reviews.png)
+![reviews](app/assets/images/reviews.gif)
 
 ## Features To Add Soon
 
