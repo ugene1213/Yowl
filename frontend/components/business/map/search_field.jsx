@@ -31,8 +31,10 @@ class SearchField extends React.Component {
       });
   }
 
-  update(prop) {
+  componentDidUpdate() {
+  }
 
+  update(prop) {
     if( typeof prop === 'undefined') {
       this.location = this.autocomplete.getPlace();
     } else {

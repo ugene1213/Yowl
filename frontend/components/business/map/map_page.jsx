@@ -8,7 +8,10 @@ class MapPage extends React.Component {
   constructor(props) {
     super(props);
     this.setLocation = this.setLocation.bind(this);
-    this.places = {};
+    this.places = { markers: {} };
+    this.state = {
+
+    }
   }
   componentWillReceiveProps(nextProps) {
       this.setLocation(nextProps.location.query.location);
@@ -48,7 +51,10 @@ class MapPage extends React.Component {
 
     const mapOptions = {
       center: {lat: 40.7831, lng: -73.9712},
-      zoom: 12
+      zoom: 12,
+      streetViewControl: false,
+      zoomControl: false
+
     };
     this.geocoder = new google.maps.Geocoder();
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
@@ -56,28 +62,54 @@ class MapPage extends React.Component {
     window.places = this.places;
     this.setLocation(this.props.location.query.location);
     this.MarkerManager = new MarkerManager(this.map, this.geocoder);
-    this.MarkerManager.updateMarkers(this.props.businesses);
-    window.MarkerManafer = this.MarkerManager;
+    debugger
+    this.MarkerManager.updateMarkers(this.props.businesses).then( (marks) => {
+      this.setState({
+        markers: marks
+      });
+    });
   }
 
+
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.businesses);
+    debugger
+      this.MarkerManager.updateMarkers(this.props.businesses).then((marks) => {
+      this.setState({
+        markers: marks
+      });
+    });
+
   }
 
   render() {
-
     const businesses = toArray(this.props.businesses);
+    let b;
+
+    if (this.MarkerManager && Object.keys(this.state.markers.length > 0)) {
+      b = <BusinessIndex businesses={ businesses }
+        location={ this.props.location }
+        indexes={ Object.keys(this.MarkerManager.markers)}
+      />
+    }
 
     return (
 
     <div className='map-page-container'>
 
-      <div className='businesses'>
-        <BusinessIndex businesses={ businesses } />
+      <div className='map-page-main'>
+        <div className='businesses'>
+          { b ? b : <BusinessIndex businesses={ businesses }
+            location={ this.props.location }
+          />  }
+        </div>
+
+        <div className='map-container' ref='map'></div>
+
       </div>
 
-      <div className='map-container' ref='map'></div>
-
+      <div className='signup-login-footer'>
+        <footer className='copyright'>Copyright © 2017 By Eugene Cheng </footer>
+      </div>
     </div>
     )
   }
