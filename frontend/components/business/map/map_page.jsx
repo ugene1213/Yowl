@@ -62,22 +62,12 @@ class MapPage extends React.Component {
     window.places = this.places;
     this.setLocation(this.props.location.query.location);
     this.MarkerManager = new MarkerManager(this.map, this.geocoder);
-    debugger
-    this.MarkerManager.updateMarkers(this.props.businesses).then( (marks) => {
-      this.setState({
-        markers: marks
-      });
-    });
+    this.MarkerManager.updateMarkers(this.props.businesses);
   }
 
 
   componentDidUpdate() {
-    debugger
-      this.MarkerManager.updateMarkers(this.props.businesses).then((marks) => {
-      this.setState({
-        markers: marks
-      });
-    });
+      this.MarkerManager.updateMarkers(this.props.businesses);
 
   }
 
@@ -85,12 +75,12 @@ class MapPage extends React.Component {
     const businesses = toArray(this.props.businesses);
     let b;
 
-    if (this.MarkerManager && Object.keys(this.state.markers.length > 0)) {
-      b = <BusinessIndex businesses={ businesses }
-        location={ this.props.location }
-        indexes={ Object.keys(this.MarkerManager.markers)}
-      />
-    }
+    // if (this.MarkerManager && Object.keys(this.state.markers.length > 0)) {
+    //   b = <BusinessIndex businesses={ businesses }
+    //     location={ this.props.location }
+    //     indexes={ Object.keys(this.MarkerManager.markers)}
+    //   />
+    // }
 
     return (
 
@@ -98,9 +88,9 @@ class MapPage extends React.Component {
 
       <div className='map-page-main'>
         <div className='businesses'>
-          { b ? b : <BusinessIndex businesses={ businesses }
+          <BusinessIndex businesses={ businesses }
             location={ this.props.location }
-          />  }
+            />
         </div>
 
         <div className='map-container' ref='map'></div>

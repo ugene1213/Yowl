@@ -47,9 +47,15 @@ class SearchField extends React.Component {
   }
 
     handleSubmit(e) {
-    const location = this.location.formatted_address;
+      e.preventDefault();
+      let location;
+      debugger
+    if (!this.location.formatted_address) {
+      location = document.getElementById('searchTextField').value;
+    } else {
+      location = this.location.formatted_address;
+    }
 
-    e.preventDefault();
     hashHistory.push({
       pathname: `/business-map/${location}`,
       query: { location }

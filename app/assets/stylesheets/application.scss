@@ -91,14 +91,10 @@ body {
 
 }
 
-.user-image {
-  display: block;
-  float: left;
-}
 
 .button-stuff {
-  float: right;
   display: block;
+  margin-left: 5px;
 }
 
 .header-name {
@@ -621,6 +617,11 @@ select {
 
 .user-image {
   border: 1px solid black;
+}
+
+.header-user-info {
+  display: flex;
+  justify-content: flex-end;
 }
 
 input[type="radio"] {

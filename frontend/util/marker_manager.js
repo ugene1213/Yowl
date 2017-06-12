@@ -41,8 +41,7 @@ export default class MarkerManager {
     return Object.keys(this.businesses).filter( (businessId) => {
       const distance = google.maps.geometry.spherical.computeDistanceBetween(chunky.map.getCenter(),
       chunky.savedLocations[businessId]);
-      debugger
-      return distance < 600;
+      return distance > 600;
     });
   }
 
@@ -57,7 +56,6 @@ export default class MarkerManager {
   }
 
   checkDistance(businessId) {
-    // debugger
     const distance = google.maps.geometry.spherical.computeDistanceBetween(this.map.getCenter(),
     this.savedLocations[businessId]);
     return distance <= 1500;
@@ -86,17 +84,14 @@ export default class MarkerManager {
       map: this.map,
       businessId
     });
-    // marker.addListener('click', () => this.handleClick(business));
+    const infoWindow = new google.maps.InfoWindow({
+      content: 'test'
+    });
+    marker.addListener('click', () => {
+      infoWindow.open(this.map, marker);
+    });
     this.markers[businessId] = marker;
 
-    return new Promise((resolve, reject) => {
-      debugger
-      if (Object.keys(poop.markers) > 0) {
-        resolve(poop.markers);
-      } else {
-        reject('none');
-      }
-    });
   }
 
   deleteMarker(businessId) {
