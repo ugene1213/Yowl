@@ -1,4 +1,5 @@
-
+import BusinessItem from '../components/business/business_item';
+import { starRating } from './business_api_util';
 export default class MarkerManager {
   constructor(map, geocoder) {
     this.map = map;
@@ -46,12 +47,11 @@ export default class MarkerManager {
   }
 
   _createMarkerFromBusiness( businessId ) {
-
     if (!this.savedLocations[businessId]) {
       this.getPos(this.businesses[businessId]);
     } else {
       this.checkDistance(businessId);
-      this.actuallyCreateMarker(this.savedLocations[businessId], businessId);
+      this.actuallyCreateMarker(this,this.savedLocations[businessId], businessId);
     }
   }
 
@@ -84,11 +84,28 @@ export default class MarkerManager {
       map: this.map,
       businessId
     });
+    const business = this.businesses[businessId];
     const infoWindow = new google.maps.InfoWindow({
-      content: 'test'
+      content:
+          '<div class="infoWindow">' +
+          '<div class="marker-main">' +
+          '<img src="' + window.yowlAssets[business.picture] + '"' + 'class="business-photo"/>' +
+          '<div class="marker-info">' +
+          '<h4 class="business-header">' + '<button class="business-link">' + business.name + "</button>" +
+        "</h4>" + '<div class="star-' + starRating(business.average_rating) + '">' + "</div>" +
+          '<div class="business-show-address">' + business.address + "</div>" +
+          '</div>' +
+          '</div>' +
+          '<p class="business-description">' +
+            business.description +
+          '</p>' +
+          '</div>'
     });
-    marker.addListener('click', () => {
+    marker.addListener('mouseover', () => {
       infoWindow.open(this.map, marker);
+    });
+    marker.addListener('mouseout', () => {
+      infoWindow.close();
     });
     this.markers[businessId] = marker;
 
